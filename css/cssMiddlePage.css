@@ -1,0 +1,152 @@
+
+
+    .sectionDetail {
+        : 50px 0;
+    }
+
+
+/** viewHome **/
+
+    .paragraph {
+      padding: 0 0 20px;
+      font-size: 20px;
+      font-weight: lighter;
+      text-align: center;
+      position: relative;
+      left: 17%;
+    }
+    .pictureHome {
+      opacity: 1;
+    }
+    .novelTitle {
+      opacity: 1;
+      position: absolute;
+      top: 10vh;
+      z-index: 1;
+      font-family: cursive , "times new roman", times, serif;
+      font-size: 50px;
+      color: white;
+      padding: 0 0 0 70px;
+    }
+    .principalTitleSection {
+      text-align: center;
+      font-size: 25px;
+    }
+    .sectionHome, .sectionLogin, .sectionCGU, .sectionChapter, .sectionAbout, .sectionContact, .sectionDashboard {
+      min-height: 620px;
+    }
+    .sectionHome {
+      padding: 15px 0;
+    }
+    .sectionLogin, .sectionCGU, .sectionChapter, .sectionAbout, .sectionContact, .sectionDashboard {
+      padding: 60px 30px;
+    }
+    .sectionChapter {
+      border-left: 1px solid black;
+      padding: 0px 15px;
+    }
+    .chapterViewListSmallChapter, .chapterViewFullChapter {
+        margin: 80px 80px;
+      padding: 15px 15px;
+      border: 1px solid lightgrey;
+        box-shadow: 6px 6px 10px 1px grey;
+    }
+    .ChapterViewHome {
+        margin: 20px 40px;
+        padding: 15px 15px;
+        border: 1px solid lightgrey;
+        box-shadow: 6px 6px 10px 1px grey;
+    }
+    a, a:hover {
+    text-decoration: none;
+    color: blue;
+    }
+    a:hover {
+    text-decoration: none;
+    color: lightblue;
+    }
+
+
+/** viewChapter **/
+
+      .autor {
+        font-size: 12px;
+      }
+      .formComment {
+        padding: 15px 50px;
+        border-bottom: 1px solid grey;
+      }
+      .sectionComment {
+          margin: 30px 0;
+        overflow: auto;
+        padding: 15px 80px;
+        border-bottom: 1px solid blue;
+      }
+      .comment {
+          border: 1px solid lightgrey;
+          padding: 25px;
+          box-shadow: 6px 6px 10px 1px grey;
+      }
+      .contentChapter {
+         margin: 0 100px 0 40px;
+         font-size: 20px;
+      }
+      h6 {
+        font-size: 10px;
+        color: grey;
+      }
+/** viewAbout **/
+
+      .pitureAbout {
+        text-align: center;
+      }
+
+/** viewContact **/
+
+/** viewDashdoard **/
+
+      .sectionMenu {
+          min-height: 700px;
+        border-right: 1px solid grey;
+        padding: 0 10px;
+      }
+      .sectionDetail {
+        min-height: 700px;
+        padding: 50px 10px 0 ;
+      }
+      .menuDashboard {
+        padding: 10px 20px 10px 30px;
+        border-bottom: 1px solid grey;
+        border-radius: 3px;
+      }
+      .menuDashboard:hover {
+        cursor: pointer;
+        background-color: lightblue;
+      }
+      .sectionMenuChapter, .sectionMenuComment, .sectionMenuMessage {
+        margin: 0 0 50px;
+      }
+      .colorMenu {
+        background-color: lightgrey;
+      }
+      .listMessageContact, .listComment, .listChapter, .listReportComment, .listValidateComment, .listBlockComment {
+        padding: 10px 20px;
+        border-bottom: 1px solid grey;
+        color: black;
+      }
+      .listMessageContact:hover, .listComment:hover, .listChapter:hover, .listReportComment:hover, .listValidateComment:hover, .listBlockComment:hover {
+        cursor: pointer;
+        background-color: lightblue;
+        color: black;
+      }
+      ul {
+        list-style-type: none;
+      }
+      .sectionDashboard a {
+        color: black;
+      }
+      .btn {
+        padding: 10px 0;
+      }
+
+/** viewLogin **/

@@ -1,0 +1,23 @@
+
+
+      .footer {
+        height: 110px;
+      }
+      .pictureFooter {
+        border-radius: 12px;
+        margin: 0px 15px;
+      }
+      .footerShopNetwork, .footerSocialNetwork, .footerLink {
+        background-color: rgb(30,30,30);
+        color: white;
+        padding: 10px 0 0 20px;
+      }
+      .footerShopNetwork, .footerSocialNetwork {
+        border-right: 1px solid white;
+      }
+      .linkFooter a {
+        color: grey;
+      }
+      .linkFooter a:hover {
+        color: white;
+      }

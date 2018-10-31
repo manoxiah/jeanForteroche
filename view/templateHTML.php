@@ -9,7 +9,7 @@
     <link href="/Projet_3/css/cssHeader.css" rel="stylesheet">
     <link href="/Projet_3/css/cssMiddlePage.css" rel="stylesheet">
     <link href="/Projet_3/css/cssFooter.css" rel="stylesheet">
-  </head><br/>
+  </head>
 
   <body class="row">
     <div class="col-lg-12 container-fluid">

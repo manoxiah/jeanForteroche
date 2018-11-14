@@ -8,20 +8,17 @@
 /** viewHome **/
 
     .paragraph {
-      padding: 0 0 20px;
       font-size: 20px;
-      font-weight: lighter;
-      text-align: center;
-      position: relative;
-      left: 17%;
+        text-align: justify;
+        margin : 0 150px;
     }
     .pictureHome {
-      opacity: 1;
+        overflow: hidden;
     }
     .novelTitle {
       opacity: 1;
       position: absolute;
-      top: 10vh;
+      top: 50px;
       z-index: 1;
       font-family: cursive , "times new roman", times, serif;
       font-size: 50px;
@@ -78,7 +75,6 @@
       }
       .sectionComment {
           margin: 30px 0;
-        overflow: auto;
         padding: 15px 80px;
         border-bottom: 1px solid blue;
       }
@@ -104,13 +100,16 @@
 /** viewContact **/
 
 /** viewDashdoard **/
-
+    .sectionMessage {
+        margin: 30px 0;
+        padding: 15px 80px;
+        }
       .sectionMenu {
           min-height: 700px;
-        border-right: 1px solid grey;
         padding: 0 10px;
       }
       .sectionDetail {
+          border-left: 1px solid grey;
         min-height: 700px;
         padding: 50px 10px 0 ;
       }
@@ -130,7 +129,7 @@
         background-color: lightgrey;
       }
       .listMessageContact, .listComment, .listChapter, .listReportComment, .listValidateComment, .listBlockComment {
-        padding: 10px 20px;
+        padding: 10px 20px 6px;
         border-bottom: 1px solid grey;
         color: black;
       }
@@ -146,7 +145,7 @@
         color: black;
       }
       .btn {
+          margin: 0 20px;
         padding: 10px 0;
       }
 
-/** viewLogin **/

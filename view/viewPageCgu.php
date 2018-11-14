@@ -263,4 +263,4 @@ Vous avez également le droit d'introduire une réclamation à notre rencontre a
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require_once('templateHTML.php');
+<?php require_once('./view/template/viewTemplateHtml.php');

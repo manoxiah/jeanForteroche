@@ -4,7 +4,7 @@ ob_start(); ?>
 
 <div class="col-lg-12 sectionContact">
   <div class="principalTitleSection"><strong>-- Contact --</strong></div><br/><br/><br/>
-    <form action="sendMessage.php" method="post" class="col-lg-6">
+    <form action="./index.php?callPage=sendMessageFormContact" method="post" class="col-lg-6">
       <h4>Formulaire de contact :</h4><br/>
 				<div class="form-group">
 				 <input type="text" class="form-control" id="name" name="name" placeholder="Nom" required >
@@ -13,7 +13,7 @@ ob_start(); ?>
 					<input type="text" class="form-control" id="email" name="email" placeholder="Email" required >
 			 	</div>
         <div class="form-group">
-         <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Message" rows="7" required ></textarea>
+         <textarea class="form-control" type="textarea" name="contentMessage" id="contentMessage" placeholder="Message" rows="7" required ></textarea>
          <h6>Remplissez tous les champs</h6>
         </div>
 
@@ -22,4 +22,4 @@ ob_start(); ?>
 </div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require_once('templateHTML.php');
+<?php require_once('./view/template/viewTemplateHtml.php');

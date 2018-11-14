@@ -1,8 +1,8 @@
 <?php
 
-require_once("model/modelLogBDD.php");
+require_once("./model/modelLogBDD.php");
 
-class comment extends BDD
+class modelComment
 {
     private $BDD;
 
@@ -11,18 +11,47 @@ class comment extends BDD
       $this->BDD = new BDD();
     }
 
-    public function getListFullComment($numberChapter)
+    public function getDisplayListCommentForOneChapter($idChapter)
     {
-      $req = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentaire_chapitre WHERE id_chapitre=:a ORDER BY publicationDate DESC');
-      $req->execute(array('a'=>$numberChapter));
-
-      return $req;
+        $donneesDisplayListCommentForOneChapter = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentChapter WHERE idChapter=:a ORDER BY publicationDate DESC');
+        $donneesDisplayListCommentForOneChapter->execute(array('a'=>$idChapter));
+        return $donneesDisplayListCommentForOneChapter->fetchAll();
     }
 
-    public function getListCommentState0()
+    public function getDisplayListLineCommentByStateComment($stateComment)
     {
-        $req = $this->BDD->connexionBDD()->query('SELECT * FROM commentaire_chapitre WHERE signaler_valider_bloquer=0 ORDER BY publicationDate DESC');
+        $donneesDisplayListLineCommentByStateComment = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentChapter WHERE stateComment=:a ORDER BY publicationDate DESC');
+        $donneesDisplayListLineCommentByStateComment->execute(array('a'=>$stateComment));
+        return $donneesDisplayListLineCommentByStateComment->fetchAll();
+    }
 
-        return $req;
+    public function getDisplayOneComment($idComment)
+    {
+        $donneesDisplayOneComment = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentChapter WHERE id=:a ');
+        $donneesDisplayOneComment->execute(array('a'=>$idComment));
+        $donneesDisplayOneComment = $donneesDisplayOneComment->fetch();
+        return $donneesDisplayOneComment;
+    }
+
+    public function sendComment($idChapter,$contentComment,$pseudo)
+    {
+        $donneesSendCommentChapter = $this->BDD->connexionBDD()->prepare('INSERT INTO commentChapter( idChapter,contentComment,pseudo,stateComment,publicationDate) VALUES(?,?,?,?,now())');
+        $donneesSendCommentChapter->execute(array($idChapter,$contentComment,$pseudo,0));
+        return true;
+    }
+
+    public function updateComment($idComment,$stateComment)
+    {
+        $donneesReportCommentChapter = $this->BDD->connexionBDD()->prepare('UPDATE commentChapter SET stateComment=:a WHERE id=:b');
+        $donneesReportCommentChapter->execute(array('a'=>$stateComment, 'b'=>$idComment));
+        return true;
+    }
+
+    public function deleteCommentForOneChapter($idChapter)
+    {
+        $donneesMessage = $this->BDD->connexionBDD()->prepare('DELETE FROM commentChapter WHERE idChapter=:a');
+        $donneesMessage->execute(array('a'=>$idChapter));
+        return true;
     }
 }
+

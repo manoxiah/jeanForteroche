@@ -6,7 +6,7 @@ ob_start(); ?>
   <div class="principalTitleSection"><strong>-- Jean FORTEROCHE --</strong></div><br/><br/><br/>
     <div class="pitureAbout"><img src="./images/jean_forteroche.jpg"></div><br/><br/><br/>
       <div class="col-lg-12">
-        <p class="col-lg-8 paragraph">
+        <p class="paragraph">
           Nationalité : États-Unis
           Né(e) à : Brookline, Massachusetts , le 12/04/1954
           Biographie :
@@ -26,4 +26,4 @@ ob_start(); ?>
 </div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require_once('./view/templateHTML.php');
+<?php require_once('./view/template/viewTemplateHtml.php');

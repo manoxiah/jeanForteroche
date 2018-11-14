@@ -1,9 +1,13 @@
 
 
-    .sectionDetail {
+    .sectionDetail
+    {
         : 50px 0;
     }
-
+    .colorButtonNav
+    {
+        color: white;
+    }
 
 /** viewHome **/
 

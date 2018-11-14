@@ -116,5 +116,5 @@ if (isset($_GET['callPage']))
 }
 else {
     $objetControllerChapter = new controllerChapter();
-    $objetControllerChapter->displayListChapterPageHome(0);
+    $objetControllerChapter->displayListChapterPageHome(1);
 }

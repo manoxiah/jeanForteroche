@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title><?php echo "$titlePage"; ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="./images/livre.jpg"/>
-    <link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/cssBody.css" rel="stylesheet">
     <link href="./css/cssHeader.css" rel="stylesheet">
     <link href="./css/cssMiddlePage.css" rel="stylesheet">

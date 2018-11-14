@@ -2,11 +2,11 @@
 $titlePage = "Jean FORTEROCHE vous accueille";
 ob_start();
 
-    require_once('./view/frontend/picture/viewPictureMountain.php');
+    require_once('./view/frontOffice/picture/viewPictureMountain.php');
     ?>
   <div class="col-lg-12 sectionHome">
     <?php
-        require_once('./view/frontend/general/viewContentPreface.php');
+        require_once('./view/frontOffice/general/viewContentPreface.php');
     ?>
   <div class="col-lg-4 sectionChapter">
     <div class="principalTitleSection"><strong>-- Les chapitres --</strong></div>

@@ -10,7 +10,7 @@ require_once('./controller/controllerMessage.php');
 
 if (isset($_GET['callPage']))
 {
-
+// test
   switch ($_GET['callPage'])
   {
       case "home":

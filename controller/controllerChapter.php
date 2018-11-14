@@ -1,9 +1,21 @@
 <?php
 
-require_once("./model/modelChapter.php");
+require_once("./view/backOffice/model/modelChapter.php");
 
 class controllerChapter
 {
+    private $objectModelChapter;
+    private $objectControllerComment;
+
+    public function __construct()
+    {
+        $this->objectModelChapter = new modelChapter();
+        $this->objectControllerComment = new controllerComment();
+    }
+
+
+
+
 
     public function updateChapterPageDashboard($idChapter,$titleChapter,$contentChapter)
     {
@@ -13,8 +25,7 @@ class controllerChapter
     public function deleteChapterPageDashboard($idChapter)
     {
         $this->deleteChapter($idChapter);
-        $objetControllerComment = new controllerComment();
-        $objetControllerComment->deleteListCommentForOneChapter($idChapter);
+        $this->objectControllerComment->deleteListCommentForOneChapter($idChapter);
         header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1" );
     }
 
@@ -25,8 +36,7 @@ class controllerChapter
     }
     public function sendNewChapter($numberChapter,$titleChapter,$contentChapter)
     {
-        $objetChapter = new modelChapter();
-        $objetChapter->sendNewChapter($numberChapter,$titleChapter,$contentChapter);
+        $this->objectModelChapter->sendNewChapter($numberChapter,$titleChapter,$contentChapter);
         header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
     }
 
@@ -39,8 +49,7 @@ class controllerChapter
     public function displayOneChapterPageChapter($idChapter)
     {
         $displayOneChapterPageChapter = $this->displayOneChapter($idChapter);
-        $objetControllerComment = new controllerComment();
-        $displayListCommentForOneChapterPageChapter = $objetControllerComment->displayListCommentForOneChapterPageChapter($_GET['idChapter']);
+        $displayListCommentForOneChapterPageChapter = $this->objectControllerComment->displayListCommentForOneChapterPageChapter($_GET['idChapter']);
         require_once("./view/viewPageChapter.php");
     }
 
@@ -64,36 +73,31 @@ class controllerChapter
 
     private function displayListChapter($stateChapter = null)
     {
-        $objetDisplayListChapter = new modelChapter();
-        $donneesDisplayListChapter = $objetDisplayListChapter->getDisplayListChapter($stateChapter);
-        return $donneesDisplayListChapter;
+        $dataDisplayListChapter = $this->objectModelChapter->getDisplayListChapter($stateChapter);
+        return $dataDisplayListChapter;
     }
 
     private function displayOneChapter($idChapter)
     {
-        $objetDisplayOneChapter = new modelChapter();
-        $donneesDisplayOneChapter = $objetDisplayOneChapter->getDisplayOneChapter($idChapter);
-        return $donneesDisplayOneChapter;
+        $dataDisplayOneChapter = $this->objectModelChapter->getDisplayOneChapter($idChapter);
+        return $dataDisplayOneChapter;
     }
 
     private function updateStateChapter($idChapter,$stateChapter)
     {
-        $objetChapter = new modelChapter();
-        $objetChapter->updateStateChapter($idChapter,$stateChapter);
+        $this->objectModelChapter->updateStateChapter($idChapter,$stateChapter);
         return true;
     }
 
     private function deleteChapter($idChapter)
     {
-        $objetChapter = new modelChapter();
-        $objetChapter->deleteChapter($idChapter);
+        $this->objectModelChapter->deleteChapter($idChapter);
         return true;
     }
 
     private function updateChapter($idChapter,$titleChapter,$contentChapter)
     {
-        $objetChapter = new modelChapter();
-        $objetChapter->updateChapter($idChapter,$titleChapter,$contentChapter);
+        $this->objectModelChapter->updateChapter($idChapter,$titleChapter,$contentChapter);
         return true;
     }
 }

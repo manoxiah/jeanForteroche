@@ -1,9 +1,20 @@
 <?php
 
-require_once("./model/modelComment.php");
+require_once("./view/backOffice/model/modelComment.php");
 
 class controllerComment
 {
+    private $objectModelComment;
+
+    public function __construct()
+    {
+        $this->objectModelComment = new modelComment();
+    }
+
+
+
+
+
     public function deleteListCommentForOneChapter($idChapter)
     {
         $this->deleteCommentForOneChapter($idChapter);
@@ -45,43 +56,37 @@ class controllerComment
 
     private function displayListCommentForOneChapter($idChapter)
     {
-        $objetDisplayListCommentForOneChapter = new modelComment();
-        $donneesDisplayListCommentForOneChapter = $objetDisplayListCommentForOneChapter->getDisplayListCommentForOneChapter($idChapter);
-        return $donneesDisplayListCommentForOneChapter;
+        $dataDisplayListCommentForOneChapter = $this->objectModelComment->getDisplayListCommentForOneChapter($idChapter);
+        return $dataDisplayListCommentForOneChapter;
     }
 
     private function displayListLineCommentByStateComment($stateComment)
     {
-        $objetComment = new modelComment();
-        $donneesComment = $objetComment->getDisplayListLineCommentByStateComment($stateComment);
-        return $donneesComment;
+        $dataComment = $this->objectModelComment->getDisplayListLineCommentByStateComment($stateComment);
+        return $dataComment;
     }
 
     private function displayOneComment($idComment)
     {
-        $objetComment = new modelComment();
-        $donneesComment = $objetComment->getDisplayOneComment($idComment);
-        return $donneesComment;
+        $dataComment = $this->objectModelComment->getDisplayOneComment($idComment);
+        return $dataComment;
     }
 
     private function sendComment($idChapter,$contentComment,$pseudo)
     {
-        $objetSendComment = new modelComment();
-        $objetSendComment->sendComment($idChapter,$contentComment,$pseudo);
+        $this->objectModelComment->sendComment($idChapter,$contentComment,$pseudo);
         return true;
     }
 
     private function updateComment($idComment,$stateComment)
     {
-        $objetupdateComment = new modelComment();
-        $objetupdateComment->updateComment($idComment,$stateComment);
+        $this->objectModelComment->updateComment($idComment,$stateComment);
         return true;
     }
 
     private function deleteCommentForOneChapter($idChapter)
     {
-        $objetDeleteComment = new modelComment();
-        $objetDeleteComment->deleteCommentForOneChapter($idChapter);
+        $this->objectModelComment->deleteCommentForOneChapter($idChapter);
         return true;
     }
 }

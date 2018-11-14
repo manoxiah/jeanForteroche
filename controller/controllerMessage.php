@@ -1,13 +1,23 @@
 <?php
 
-require_once("./model/modelMessage.php");
+require_once("./view/backOffice/model/modelMessage.php");
 
 class controllerMessage
 {
+    private $objectModelMessage;
+
+    public function __construct()
+    {
+        $this->objectModelMessage = new modelMessage();
+    }
+
+
+
+
+
     public function replyMessage($idMessage,$email,$stateMessage,$subject,$contentReplyMessage)
     {
-        $objetMessage = new modelMessage();
-        $objetMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
+        $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
         $this->updateMessage($idMessage,$stateMessage);
         header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
     }
@@ -37,28 +47,24 @@ class controllerMessage
 
     private function displayListLineMessageByStateMessage($stateMessage)
     {
-        $objetMessage = new modelMessage();
-        $donneesMessage = $objetMessage->getDisplayListLineMessageByStateMessage($stateMessage);
-        return $donneesMessage ;
+        $dataMessage = $this->objectModelMessage->getDisplayListLineMessageByStateMessage($stateMessage);
+        return $dataMessage ;
     }
 
     private function displayOneMessage($idMessage)
     {
-        $objetMessage = new modelMessage();
-        $donneesMessage = $objetMessage->getDisplayOneMessage($idMessage);
-        return $donneesMessage ;
+        $dataMessage = $this->objectModelMessage->getDisplayOneMessage($idMessage);
+        return $dataMessage ;
     }
     private function sendMessage($name,$email,$contentMessage)
     {
-        $objetMessage = new modelMessage();
-        $objetMessage->getSendMessage($name,$email,$contentMessage);
+        $this->objectModelMessage->getSendMessage($name,$email,$contentMessage);
         return true;
     }
 
     private function updateMessage($idMessage,$stateMessage)
     {
-        $objetMessage = new modelMessage();
-        $objetMessage->updateMessage($idMessage,$stateMessage);
+        $this->objectModelMessage->updateMessage($idMessage,$stateMessage);
         return true;
     }
 }

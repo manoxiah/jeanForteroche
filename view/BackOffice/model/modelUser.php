@@ -1,8 +1,8 @@
 <?php
 
-require_once("./model/modelLogBDD.php");
+require_once("./view/backOffice/model/modelLogBDD.php");
 
-class Login
+class modelUser
 {
     private $BDD;
 

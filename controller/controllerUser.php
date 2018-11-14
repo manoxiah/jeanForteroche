@@ -1,10 +1,21 @@
 <?php
 
-require_once("./model/modelUser.php");
+require_once("./view/backOffice/model/modelUser.php");
 
 
-class controllerLogin
+class controllerUser
 {
+    private $objectModelUser;
+
+    public function __construct()
+    {
+        $this->objectModelUser = new modelUser();
+    }
+
+
+
+
+
     public function displayPageLoginUser()
     {
         require_once("./view/viewPageLoginUser.php");
@@ -26,8 +37,7 @@ class controllerLogin
 
     private function loginUser($email,$password)
     {
-        $objetLoginUser = new Login();
-        $donneesLoginUser = $objetLoginUser->getLoginUser($email,$password);
-        return $donneesLoginUser;
+        $dataLoginUser = $this->objectModelUser->getLoginUser($email,$password);
+        return $dataLoginUser;
     }
 }

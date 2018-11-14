@@ -1,5 +1,6 @@
 <?php
-    
+session_start();
+
 require_once("./controller/controllerChapter.php");
 require_once("./controller/controllerPageAbout.php");
 require_once("./controller/controllerPageContact.php");
@@ -8,113 +9,97 @@ require_once("./controller/controllerUser.php");
 require_once('./controller/controllerComment.php');
 require_once('./controller/controllerMessage.php');
 
+
+$objectControllerChapter = new controllerChapter();
+$objectControllerMessage = new controllerMessage();
+$objectControllerComment = new controllerComment();
+$objectControllerUser = new controllerUser();
+$objectControllerPageCgu = new controllerPageCgu();
+$objectControllerPageContact = new controllerPageContact();
+$objectControllerPageAbout = new controllerPageAbout();
+
 if (isset($_GET['callPage']))
 {
 
   switch ($_GET['callPage'])
   {
       case "home":
-          $objetControllerChapter = new controllerChapter();
-          $objetControllerChapter->displayListChapterPageHome($_GET['stateChapter']);
+          $objectControllerChapter->displayListChapterPageHome($_GET['stateChapter']);
           break;
       case "chapterDisplayListChapter":
-          $objetControllerChapter = new controllerChapter();
-          $objetControllerChapter->displayListChapterPageChapter($_GET['stateChapter']);
+          $objectControllerChapter->displayListChapterPageChapter($_GET['stateChapter']);
           break;
       case "chapterDisplayOneChapter":
-          $objetControllerChapter = new controllerChapter();
-          $objetControllerChapter->displayOneChapterPageChapter($_GET['idChapter']);
+          $objectControllerChapter->displayOneChapterPageChapter($_GET['idChapter']);
           break;
       case "about":
-          $objetControllerPageAbout = new controllerPageAbout();
-          $objetControllerPageAbout->displayPageAbout();
+          $objectControllerPageAbout->displayPageAbout();
           break;
       case "contact":
-          $objetControllerPageContact = new controllerPageContact();
-          $objetControllerPageContact->displayPageContact();
+          $objectControllerPageContact->displayPageContact();
           break;
       case "loginUser":
-          $objetControllerPageLoginUser = new controllerLogin();
-          $objetControllerPageLoginUser->displayPageLoginUser();
+          $objectControllerUser->displayPageLoginUser();
           break;
       case "cgu":
-          $objetControllerPageCgu = new controllerPageCgu();
-          $objetControllerPageCgu->displayPageCgu();
+          $objectControllerPageCgu->displayPageCgu();
           break;
       case "dashboardDisplayListLineChapter":
-          $objetControllerChapter = new controllerChapter();
-          $objetControllerChapter->displayListLineChapterPageDashboard($_GET['stateChapter']);
+          $objectControllerChapter->displayListLineChapterPageDashboard($_GET['stateChapter']);
           break;
       case "dashboardDisplayOneChapter":
-          $objetControllerChapter = new controllerChapter();
-          $objetControllerChapter->displayOneChapterPageDashboard($_GET['idChapter']);
+          $objectControllerChapter->displayOneChapterPageDashboard($_GET['idChapter']);
           break;
       case "dashboardEditChapter":
           require_once("./view/viewPageDashboard.php");
           break;
       case "dashboardDisplayListLineComment":
-          $objetControllerComment = new controllerComment();
-          $objetControllerComment->displayListLineCommentByStateCommentPageDashboard($_GET['stateComment']);
+          $objectControllerComment->displayListLineCommentByStateCommentPageDashboard($_GET['stateComment']);
           break;
       case "dashboardDisplayOneComment":
-          $objetControllerComment = new controllerComment();
-          $objetControllerComment->displayOneCommentPageDashboard($_GET['idComment']);
+          $objectControllerComment->displayOneCommentPageDashboard($_GET['idComment']);
           break;
       case "dashboardDisplayListLineMessage":
-          $objetControllerMessage = new controllerMessage();
-          $objetControllerMessage->displayListLineMessageByStateMessagePageDashboard($_GET['stateMessage']);
+          $objectControllerMessage->displayListLineMessageByStateMessagePageDashboard($_GET['stateMessage']);
           break;
       case "dashboardDisplayOneMessage":
-          $objetControllerMessage = new controllerMessage();
-          $objetControllerMessage->displayOneMessagePageDashboard($_GET['idMessage']);
+          $objectControllerMessage->displayOneMessagePageDashboard($_GET['idMessage']);
           break;
       case "sendLoginUser":
-          $objetControllerUser = new controllerLogin();
-          $objetControllerUser->connectionUser($_POST['email'],$_POST['password'],$_GET['stateChapter']);
+          $objectControllerUser->connectionUser($_POST['email'],$_POST['password'],$_GET['stateChapter']);
           break;
       case "sendNewChapter":
-          $objetcontrollerChapter = new controllerChapter();
-          $objetcontrollerChapter->sendNewChapter($_POST['numberChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
+          $objectControllerChapter->sendNewChapter($_POST['numberChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
           break;
       case "sendCommentChapter":
-          $objetControllerComment = new controllerComment();
-          $objetControllerComment->sendCommentChapter($_GET['idChapter'],$_POST['contentComment'],$_POST['pseudo']);
+          $objectControllerComment->sendCommentChapter($_GET['idChapter'],$_POST['contentComment'],$_POST['pseudo']);
           break;
       case "updateCommentChapterPageChapter":
-          $objetControllerChapter = new controllerComment();
-          $objetControllerChapter->updateCommentChapterPageChapter($_GET['idComment'],$_GET['stateComment'],$_GET['idChapter']);
+          $objectControllerComment->updateCommentChapterPageChapter($_GET['idComment'],$_GET['stateComment'],$_GET['idChapter']);
           break;
       case "updateCommentChapterPageDashboard":
-          $objetControllerChapter = new controllerComment();
-          $objetControllerChapter->updateCommentChapterPageDashboard($_GET['idComment'],$_GET['stateComment']);
+          $objectControllerComment->updateCommentChapterPageDashboard($_GET['idComment'],$_GET['stateComment']);
           break;
       case "sendMessageFormContact":
-          $objetControllerMessage = new controllerMessage();
-          $objetControllerMessage->sendMessageFormContact($_POST['name'],$_POST['email'],$_POST['contentMessage']);
+          $objectControllerMessage->sendMessageFormContact($_POST['name'],$_POST['email'],$_POST['contentMessage']);
           break;
       case "updateMessage":
-          $objetControllerMessage = new controllerMessage();
-          $objetControllerMessage->updateMessagePageDashboard($_GET['idMessage'],$_GET['stateMessage']);
+          $objectControllerMessage->updateMessagePageDashboard($_GET['idMessage'],$_GET['stateMessage']);
           break;
       case "updateStateChapterPageDashboard":
-          $objetcontrollerChapter = new controllerChapter();
-          $objetcontrollerChapter->updateStateChapterPageDashboard($_GET['idChapter'],$_GET['stateChapter']);
+          $objectControllerChapter->updateStateChapterPageDashboard($_GET['idChapter'],$_GET['stateChapter']);
           break;
       case "deleteChapterPageDashboard":
-          $objetcontrollerChapter = new controllerChapter();
-          $objetcontrollerChapter->deleteChapterPageDashboard($_GET['idChapter']);
+          $objectControllerChapter->deleteChapterPageDashboard($_GET['idChapter']);
           break;
       case "updateChapterPageDashboard":
-          $objetcontrollerChapter = new controllerChapter();
-          $objetcontrollerChapter->updateChapterPageDashboard($_GET['idChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
+          $objectControllerChapter->updateChapterPageDashboard($_GET['idChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
           break;
       case "replyMessage":
-          $objetControllerMessage = new controllerMessage();
-          $objetControllerMessage->replyMessage($_GET['idMessage'],$_GET['email'],$_GET['stateMessage'],$_POST['subject'],$_POST['contentReplyMessage']);
+          $objectControllerMessage->replyMessage($_GET['idMessage'],$_GET['email'],$_GET['stateMessage'],$_POST['subject'],$_POST['contentReplyMessage']);
           break;
   }
 }
 else {
-    $objetControllerChapter = new controllerChapter();
-    $objetControllerChapter->displayListChapterPageHome(1);
+    $objectControllerChapter->displayListChapterPageHome(1);
 }

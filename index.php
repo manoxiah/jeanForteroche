@@ -8,7 +8,7 @@ require_once("./controller/controllerPageCgu.php");
 require_once("./controller/controllerUser.php");
 require_once('./controller/controllerComment.php');
 require_once('./controller/controllerMessage.php');
-
+require_once('./controller/controllerValidator.php');
 
 $objectControllerChapter = new controllerChapter();
 $objectControllerMessage = new controllerMessage();
@@ -17,6 +17,8 @@ $objectControllerUser = new controllerUser();
 $objectControllerPageCgu = new controllerPageCgu();
 $objectControllerPageContact = new controllerPageContact();
 $objectControllerPageAbout = new controllerPageAbout();
+$objectControllerValidator = new controllerValidator();
+
 
 if (isset($_GET['callPage']))
 {
@@ -66,7 +68,10 @@ if (isset($_GET['callPage']))
           $objectControllerMessage->displayOneMessagePageDashboard($_GET['idMessage']);
           break;
       case "sendLoginUser":
-          $objectControllerUser->connectionUser($_POST['email'],$_POST['password'],$_GET['stateChapter']);
+          $objectControllerUser->validateLoginUser($_POST['email'],$_POST['password']);
+          break;
+      case "logoutUser":
+          $objectControllerUser->logoutUser();
           break;
       case "sendNewChapter":
           $objectControllerChapter->sendNewChapter($_POST['numberChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
@@ -97,6 +102,9 @@ if (isset($_GET['callPage']))
           break;
       case "replyMessage":
           $objectControllerMessage->replyMessage($_GET['idMessage'],$_GET['email'],$_GET['stateMessage'],$_POST['subject'],$_POST['contentReplyMessage']);
+          break;
+      case "test":
+          $objectControllerValidator->requestValidator($_GET['a']);
           break;
   }
 }

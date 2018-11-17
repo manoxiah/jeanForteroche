@@ -18,27 +18,48 @@
             <div class="col-lg-3 navbar-header logo">
               <span>Jean FORTEROCHE</span>
             </div>
-              <ul class="col-lg-6 nav navbar-nav pull-right">
-                  <li class="col-lg-2">
+              <ul class="col-lg-7 nav navbar-nav pull-right">
+                  <li class="col-lg-1.5">
                       <a href="./index.php?callPage=home&stateChapter=1&colorButtonNavHome=0">
                           <span class="<?php if ((isset($_GET['colorButtonNavHome'])) and ($_GET['colorButtonNavHome'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
                       </a>
                   </li>
-                  <li class="col-lg-3">
+                  <li class="col-lg-2">
                       <a href="./index.php?callPage=chapterDisplayListChapter&stateChapter=1&colorButtonNavChapter=0">
                           <span class="<?php if ((isset($_GET['colorButtonNavChapter'])) and ($_GET['colorButtonNavChapter'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Les chapitres</span>
                       </a>
                   </li>
-                  <li class="col-lg-2">
+                  <li class="col-lg-1.5">
                       <a href="./index.php?callPage=about&colorButtonNavAbout=0">
                           <span class="<?php if ((isset($_GET['colorButtonNavAbout'])) and ($_GET['colorButtonNavAbout'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">A propos</span>
                       </a>
                   </li>
-                  <li class="col-lg-2">
+                  <li class="col-lg-1.5">
                       <a href="./index.php?callPage=contact&colorButtonNavContact=0">
                           <span class="<?php if ((isset($_GET['colorButtonNavContact'])) and ($_GET['colorButtonNavContact'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Contact</span>
                       </a>
                   </li>
+                  <?php
+                  if ((isset($_SESSION['admin'])) and ($_SESSION['admin'] == "jeanForteroche"))
+                  {
+                      ?>
+                      <li class="col-lg-1.5">
+                          <a href="./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0">
+                              <span class="<?php if ((isset($_GET['colorButtonNavDashboard'])) and ($_GET['colorButtonNavDashboard'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>" >Outils</span>
+                          </a>
+                      </li>
+                      <li class="col-lg-2 pull-right">
+                          <a href="./index.php?callPage=logoutUser">
+                              <span>Déconnexion</span>
+                          </a>
+                      </li>
+                      <?php
+                  }
+                  else
+                  {
+
+                  }
+                  ?>
               </ul>
           </nav>
       </header>

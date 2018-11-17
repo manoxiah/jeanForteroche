@@ -28,13 +28,23 @@ class controllerComment
     public function updateCommentChapterPageChapter($idComment,$stateComment,$idChapter)
     {
         $this->updateComment($idComment,$stateComment);
-        header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter" );
+        header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
     }
 
     public function sendCommentChapter($idChapter,$contentComment,$pseudo)
     {
-        $this->sendComment($idChapter,$contentComment,$pseudo);
-        header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter" );
+        if ((isset($idChapter)) and (isset($contentComment)) and (isset($pseudo)))
+        {
+            $pseudo = htmlspecialchars($pseudo, ENT_QUOTES);
+            $contentComment = htmlspecialchars($contentComment, ENT_QUOTES);
+
+            $this->sendComment($idChapter,$contentComment,$pseudo);
+            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+        }
+        else
+        {
+            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+        }
     }
 
     public function displayOneCommentPageDashboard($idComment)

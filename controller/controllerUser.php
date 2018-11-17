@@ -15,19 +15,31 @@ class controllerUser
 
 
 
+    public function logoutUser()
+    {
+        session_unset ();
+        session_destroy ();
+
+        header ('location: index.php');
+    }
 
     public function displayPageLoginUser()
     {
         require_once("./view/viewPageLoginUser.php");
     }
 
-    public function connectionUser($email,$password,$stateChapter)
+    public function validateLoginUser($email,$password)
     {
         $connectionUser = $this->loginUser($email,$password);
 
-        if (password_verify($password, $connectionUser['mdp']))
+        if (password_verify($password,$connectionUser['mdp']))
         {
-            header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=$stateChapter" );
+            session_start ();
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
+            $_SESSION['admin'] = "jeanForteroche";
+
+            header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0" );
         }
         else
         {

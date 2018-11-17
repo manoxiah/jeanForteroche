@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5848d0e-d4ef-40ae-a7bf-719c30d5a005" name="Default Changelist" comment="Mise à niveau ( suppression des duplication du mot new )">
+    <list default="true" id="f5848d0e-d4ef-40ae-a7bf-719c30d5a005" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cssMiddlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cssMiddlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerChapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerChapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerComment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controllerUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controllerUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/chapter/viewDisplayListSmallChapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/chapter/viewDisplayListSmallChapter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/template/viewTemplateHtml.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/template/viewTemplateHtml.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/viewPageHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/viewPageHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/viewPageLoginUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/viewPageLoginUser.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,40 +142,42 @@
     <session id="403557295">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="31" />
+          <entry key="php" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="31" />
+          <entry key="PHP" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="16" />
+          <entry key="dummy" value="23" />
           <entry key="md" value="47" />
-          <entry key="php" value="536" />
-          <entry key="txt" value="61" />
+          <entry key="php" value="1232" />
+          <entry key="txt" value="124" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="16" />
           <entry key="Markdown" value="47" />
-          <entry key="PHP" value="536" />
-          <entry key="PLAIN_TEXT" value="61" />
+          <entry key="PHP" value="1232" />
+          <entry key="PLAIN_TEXT" value="147" />
         </counts>
       </usages-collector>
     </session>
@@ -179,11 +187,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="439">
+              <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/controllerValidator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="25" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -191,26 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/controllerChapter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/template/viewTemplateHtml.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="38" column="122" selection-start-line="38" selection-start-column="122" selection-end-line="38" selection-end-column="122" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/cssMiddlePage.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+            <state relative-caret-position="85">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -272,14 +271,16 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="maxime" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/pictureHome.php" />
-        <option value="$PROJECT_DIR$/view/Frontend/general/viewContentPreface.php" />
-        <option value="$PROJECT_DIR$/view/path/pathController.php" />
         <option value="$PROJECT_DIR$/view/path/pathModel.php" />
         <option value="$PROJECT_DIR$/view/path/pathExtension.php" />
         <option value="$PROJECT_DIR$/view/path/pathBase.php" />
@@ -293,7 +294,6 @@
         <option value="$PROJECT_DIR$/controller/controllerPageCgu.php" />
         <option value="$PROJECT_DIR$/view/viewPageCgu.php" />
         <option value="$PROJECT_DIR$/controller/controllerPageContact.php" />
-        <option value="$PROJECT_DIR$/view/viewPageLoginUser.php" />
         <option value="$PROJECT_DIR$/model/modelLoginUser.php" />
         <option value="$PROJECT_DIR$/view/comment/viewDisplayListLineCommentState.php" />
         <option value="$PROJECT_DIR$/controller/controllerLoginUser.php" />
@@ -302,10 +302,8 @@
         <option value="$PROJECT_DIR$/view/message/viewDisplayListLineMessageState.php" />
         <option value="$PROJECT_DIR$/view/frontend/picture/viewPictureMountain.php" />
         <option value="$PROJECT_DIR$/view/frontend/general/viewContentPreface.php" />
-        <option value="$PROJECT_DIR$/view/chapter/viewDisplayListSmallChapter.php" />
         <option value="$PROJECT_DIR$/view/viewPageAbout.php" />
         <option value="$PROJECT_DIR$/view/viewPageChapter.php" />
-        <option value="$PROJECT_DIR$/view/comment/viewDisplayListCommentForOneChapter.php" />
         <option value="$PROJECT_DIR$/view/viewPageDashboard.php" />
         <option value="$PROJECT_DIR$/view/chapter/viewDisplayOneChapter.php" />
         <option value="$PROJECT_DIR$/view/chapter/viewEditChapter.php" />
@@ -314,20 +312,26 @@
         <option value="$PROJECT_DIR$/model/modelComment.php" />
         <option value="$PROJECT_DIR$/view/message/viewDisplayOneMessage.php" />
         <option value="$PROJECT_DIR$/model/modelMessage.php" />
-        <option value="$PROJECT_DIR$/view/viewPageHome.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/model/modelUser.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/view/BackOffice/model/modelMessage.php" />
         <option value="$PROJECT_DIR$/view/BackOffice/model/modelComment.php" />
         <option value="$PROJECT_DIR$/view/BackOffice/model/modelChapter.php" />
         <option value="$PROJECT_DIR$/view/BackOffice/model/modelUser.php" />
-        <option value="$PROJECT_DIR$/controller/controllerUser.php" />
         <option value="$PROJECT_DIR$/controller/controllerMessage.php" />
-        <option value="$PROJECT_DIR$/controller/controllerComment.php" />
-        <option value="$PROJECT_DIR$/controller/controllerChapter.php" />
         <option value="$PROJECT_DIR$/css/cssMiddlePage.css" />
+        <option value="$PROJECT_DIR$/controller/controllerChapter.php" />
+        <option value="$PROJECT_DIR$/view/viewPageHome.php" />
+        <option value="$PROJECT_DIR$/view/chapter/viewDisplayListSmallChapter.php" />
+        <option value="$PROJECT_DIR$/view/comment/viewDisplayListCommentForOneChapter.php" />
+        <option value="$PROJECT_DIR$/controller/controllerComment.php" />
+        <option value="$PROJECT_DIR$/controller/test.php" />
+        <option value="$PROJECT_DIR$/controller/controllerTest.php" />
+        <option value="$PROJECT_DIR$/view/viewPageLoginUser.php" />
+        <option value="$PROJECT_DIR$/controller/controllerUser.php" />
         <option value="$PROJECT_DIR$/view/template/viewTemplateHtml.php" />
+        <option value="$PROJECT_DIR$/controller/controllerValidator.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -406,6 +410,30 @@
               <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="chapter" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="form" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="frontOffice" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="template" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
@@ -471,7 +499,8 @@
       <workItem from="1542215812562" duration="2002000" />
       <workItem from="1542219381534" duration="562000" />
       <workItem from="1542220073244" duration="1965000" />
-      <workItem from="1542234416120" duration="3544000" />
+      <workItem from="1542234416120" duration="3915000" />
+      <workItem from="1542301561407" duration="17500000" />
     </task>
     <task id="LOCAL-00001" summary="Mise à niveau ( suppression des duplication du mot new )">
       <created>1542235024767</created>
@@ -480,11 +509,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542235024767</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Mise en place de la couleur white au bouton de navigation">
+      <created>1542238605209</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542238605209</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221203000" />
+    <option name="totallyTimeSpent" value="239074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,11 +532,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" weight="0.3295302" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992908" visible="true" weight="0.21409395" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992908" visible="true" weight="0.21677852" />
       <window_info id="Structure" order="2" sideWeight="0.50070924" side_tool="true" weight="0.22483222" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" weight="0.32907802" />
@@ -549,10 +585,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mise à niveau ( suppression des duplication du mot new )" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise à niveau ( suppression des duplication du mot new )" />
+    <MESSAGE value="Mise en place de la couleur white au bouton de navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mise en place de la couleur white au bouton de navigation" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/viewTemplateHTML.php" />
     <entry file="file://$PROJECT_DIR$/controller/sendMail.php" />
     <entry file="file://$PROJECT_DIR$/view/Frontend/viewPictureHome.php" />
     <entry file="file://$PROJECT_DIR$/view/path/pathModel.php" />
@@ -582,10 +618,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/viewPageCgu.php" />
-    <entry file="file://$PROJECT_DIR$/view/viewPageLoginUser.php" />
     <entry file="file://$PROJECT_DIR$/css/cssBody.css" />
-    <entry file="file://$PROJECT_DIR$/view/viewPageContact.php" />
-    <entry file="file://$PROJECT_DIR$/view/form/viewFormSendComment.php" />
     <entry file="file://$PROJECT_DIR$/view/message/viewDisplayListLineMessageState.php" />
     <entry file="file://$PROJECT_DIR$/view/comment/viewDisplayOneComment.php" />
     <entry file="file://$PROJECT_DIR$/path/pathModel.php">
@@ -596,10 +629,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/Frontend/picture/viewPictureMountain.php" />
-    <entry file="file://$PROJECT_DIR$/view/chapter/viewDisplayListSmallChapter.php" />
     <entry file="file://$PROJECT_DIR$/view/viewPageAbout.php" />
     <entry file="file://$PROJECT_DIR$/view/comment/viewDisplayListLineCommentState.php" />
-    <entry file="file://$PROJECT_DIR$/view/comment/viewDisplayListCommentForOneChapter.php" />
     <entry file="file://$PROJECT_DIR$/view/viewPageChapter.php" />
     <entry file="file://$PROJECT_DIR$/view/viewPageDashboard.php" />
     <entry file="file://$PROJECT_DIR$/view/chapter/viewDisplayOneChapter.php" />
@@ -612,13 +643,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/frontOffice/general/viewContentPreface.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/viewPageHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -634,13 +658,6 @@
             <caret column="8" selection-start-column="8" selection-end-column="8" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelMessage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -661,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controllerUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -675,54 +685,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controllerPageContact.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/controllerPageCgu.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/controllerPageAbout.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controllerMessage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controllerComment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controllerChapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/cssMiddlePage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/viewPageHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="127" lean-forward="true" selection-start-line="19" selection-start-column="127" selection-end-line="19" selection-end-column="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/chapter/viewDisplayListSmallChapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="157" selection-start-line="13" selection-start-column="157" selection-end-line="13" selection-end-column="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/comment/viewDisplayListCommentForOneChapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="226" lean-forward="true" selection-start-line="13" selection-start-column="226" selection-end-line="13" selection-end-column="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/form/viewFormSendComment.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerPageContact.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerMessage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelMessage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-496">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/viewPageContact.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/viewPageLoginUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="59" lean-forward="true" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="41" column="123" selection-start-line="41" selection-start-column="123" selection-end-line="41" selection-end-column="123" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/template/viewTemplateHtml.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="38" column="122" selection-start-line="38" selection-start-column="122" selection-end-line="38" selection-end-column="122" />
+        <state relative-caret-position="402">
+          <caret line="50" column="52" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerChapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
         </state>
       </provider>
     </entry>

@@ -11,7 +11,7 @@ ob_start(); ?>
     ?>
           <div class="chapterViewListSmallChapter" title="Cliquez ici pour lire le <?= $donneesDisplayListChapterPageChapter['numberChapter']?> complet.">
           <h3><strong>
-                  <a href="./index.php?callPage=chapterDisplayOneChapter&idChapter=<?= $donneesDisplayListChapterPageChapter['id'] ?>"><?= $donneesDisplayListChapterPageChapter['numberChapter'] ?></a>
+                  <a href="./index.php?callPage=chapterDisplayOneChapter&idChapter=<?= $donneesDisplayListChapterPageChapter['id'] ?>&colorButtonNavChapter=0"><?= $donneesDisplayListChapterPageChapter['numberChapter'] ?></a>
               </strong></h3>
           <h4><em><strong><?=$donneesDisplayListChapterPageChapter['titleChapter'] ?></strong></em></h4>
           <br/><br/><div class="contentChapter"><?= $contentChapter ?></div><br/>

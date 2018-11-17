@@ -68,6 +68,7 @@ class controllerChapter
     public function displayListChapterPageHome($stateChapter)
     {
         $displayListChapterPageHome = $this->displayListChapter($stateChapter);
+        $_GET['colorButtonNavHome'] = 0;
         require_once("./view/viewPageHome.php");
     }
 

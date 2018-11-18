@@ -10,7 +10,7 @@
     <link href="./css/cssMiddlePage.css" rel="stylesheet">
     <link href="./css/cssFooter.css" rel="stylesheet">
   </head>
-
+//stateChapter=1&colorButtonNavHome=0
   <body class="row">
     <div class="col- container-fluid">
       <header class="row">
@@ -18,15 +18,15 @@
             <div class="col-lg-3 navbar-header logo">
               <span>Jean FORTEROCHE</span>
             </div>
-              <ul class="col-lg-7 nav navbar-nav pull-right">
+              <ul class="col-lg-6 nav navbar-nav pull-right">
                   <li class="col-lg-1.5">
-                      <a href="./index.php?callPage=home&stateChapter=1&colorButtonNavHome=0">
+                      <a href="./index.php?callPage=test&a=a">
                           <span class="<?php if ((isset($_GET['colorButtonNavHome'])) and ($_GET['colorButtonNavHome'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
                       </a>
                   </li>
                   <li class="col-lg-2">
                       <a href="./index.php?callPage=chapterDisplayListChapter&stateChapter=1&colorButtonNavChapter=0">
-                          <span class="<?php if ((isset($_GET['colorButtonNavChapter'])) and ($_GET['colorButtonNavChapter'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Les chapitres</span>
+                          <span class="<?php if ((isset($_GET['colorButtonNavChapter'])) and ($_GET['colorButtonNavChapter'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Chapitres</span>
                       </a>
                   </li>
                   <li class="col-lg-1.5">
@@ -48,7 +48,7 @@
                               <span class="<?php if ((isset($_GET['colorButtonNavDashboard'])) and ($_GET['colorButtonNavDashboard'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>" >Outils</span>
                           </a>
                       </li>
-                      <li class="col-lg-2 pull-right">
+                      <li class="col-lg-3 pull-right">
                           <a href="./index.php?callPage=logoutUser">
                               <span>Déconnexion</span>
                           </a>

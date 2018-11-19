@@ -3,9 +3,10 @@
 
 
 
-<form action="./index.php?callPage=sendCommentChapter&idChapter=<?php echo $displayOneChapterPageChapter['id'] ?>" method="post" class="col-lg-6">
+<form action="./index.php?callPage=sendCommentChapter" method="post" class="col-lg-6">
   <h4>Laisser un commentaire</h4>
     <div class="form-group">
+     <input type="hidden" class="form-control" id="idChapter" name="idChapter" value="<?php echo $displayOneChapterPageChapter['id'] ?>" required >
      <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudo" required >
     </div>
     <div class="form-group">

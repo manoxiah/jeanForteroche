@@ -58,8 +58,10 @@
                     <div class="principalTitleSection"><strong>-- <?= $displayOneChapterPageChapter['numberChapter'] ?> --</strong></div>
                 </div>
                 <div class="modal-body">
-                    <form action="./index.php?callPage=updateChapterPageDashboard&stateChapter=0&idChapter=<?= $displayOneChapterPageChapter['id'] ?>" method="post">
+                    <form action="./index.php?callPage=updateChapterPageDashboard" method="post">
                         <div class="form-group">
+                            <input type="hidden" class="form-control" name ="stateChapter" id="stateChapter" value="<?= $displayOneChapterPageChapter['stateChapter'] ?>">
+                            <input type="hidden" class="form-control" name ="idChapter" id="idChapter" value="<?= $displayOneChapterPageChapter['id'] ?>">
                             <label for="titleChapter">Titre du chapitre</label>
                             <input type="text" class="form-control" name ="titleChapter" id="titleChapter" value="<?=  $displayOneChapterPageChapter['titleChapter'] ?>">
                         </div>

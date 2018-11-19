@@ -10,7 +10,7 @@
     <link href="./css/cssMiddlePage.css" rel="stylesheet">
     <link href="./css/cssFooter.css" rel="stylesheet">
   </head>
-//stateChapter=1&colorButtonNavHome=0
+
   <body class="row">
     <div class="col- container-fluid">
       <header class="row">
@@ -20,7 +20,7 @@
             </div>
               <ul class="col-lg-6 nav navbar-nav pull-right">
                   <li class="col-lg-1.5">
-                      <a href="./index.php?callPage=test&a=a">
+                      <a href="./index.php?callPage=home&stateChapter=1&colorButtonNavHome=0">
                           <span class="<?php if ((isset($_GET['colorButtonNavHome'])) and ($_GET['colorButtonNavHome'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
                       </a>
                   </li>
@@ -57,7 +57,7 @@
                   }
                   else
                   {
-
+                        echo"";
                   }
                   ?>
               </ul>

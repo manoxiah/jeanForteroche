@@ -1,14 +1,17 @@
 <?php
 
 require_once("./view/backOffice/model/modelMessage.php");
+require_once('./controller/controllerValidator.php');
 
-class controllerMessage
+class controllerMessage extends controllerValidator
 {
     private $objectModelMessage;
+    private $objectControllerValidator;
 
     public function __construct()
     {
         $this->objectModelMessage = new modelMessage();
+        $this->objectControllerValidator = new controllerValidator();
     }
 
 
@@ -17,33 +20,81 @@ class controllerMessage
 
     public function replyMessage($idMessage,$email,$stateMessage,$subject,$contentReplyMessage)
     {
-        $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
-        $this->updateMessage($idMessage,$stateMessage);
-        header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
+        $arrayArg = compact($idMessage,$email,$stateMessage,$subject,$contentReplyMessage);
+
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
+            and controllerValidator::isEmptyValidator($arrayArg))
+        {
+            controllerValidator::protectedInputValidator($arrayArg);
+            extract($arrayArg);
+
+            $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
+            $this->updateMessage($idMessage,$stateMessage);
+            header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
+        }
+        return false;
     }
 
     public function updateMessagePageDashboard($idMessage,$stateMessage)
     {
-        $this->updateMessage($idMessage,$stateMessage);
-        header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
+            and controllerValidator::isEmptyValidator(compact($idMessage,$stateMessage)))
+        {
+            $this->updateMessage($idMessage,$stateMessage);
+            header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
+        }
+        return false;
     }
     public function sendMessageFormContact($name,$email,$contentMessage)
     {
-        $this->sendMessage($name,$email,$contentMessage);
-        header("Location: ./index.php?callPage=contact" );
+        $arrayArg = compact($name,$email,$contentMessage);
+
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
+            and controllerValidator::isEmptyValidator($arrayArg)
+            and controllerValidator::protectedInputValidator($arrayArg))
+        {
+            $this->sendMessage($name,$email,$contentMessage);
+            header("Location: ./index.php?callPage=contact" );
+        }
+        return false;
     }
 
     public function displayOneMessagePageDashboard($idMessage)
     {
-        $displayOneMessage = $this->displayOneMessage($idMessage);
-        require_once("./view/viewPageDashboard.php");
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
+            and controllerValidator::isEmptyValidator(compact($idMessage)))
+        {
+            $displayOneMessage = $this->displayOneMessage($idMessage);
+            require_once("./view/viewPageDashboard.php");
+        }
+        return false;
     }
 
     public function displayListLineMessageByStateMessagePageDashboard($stateMessage)
     {
-        $displayListLineMessage = $this->displayListLineMessageByStateMessage($stateMessage);
-        require_once("./view/viewPageDashboard.php");
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
+            and controllerValidator::isEmptyValidator(compact($stateMessage)))
+        {
+            $displayListLineMessage = $this->displayListLineMessageByStateMessage($stateMessage);
+            require_once("./view/viewPageDashboard.php");
+        }
+        return false;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private function displayListLineMessageByStateMessage($stateMessage)
     {

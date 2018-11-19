@@ -1,14 +1,17 @@
 <?php
 
 require_once("./view/backOffice/model/modelComment.php");
+require_once('./controller/controllerValidator.php');
 
-class controllerComment
+class controllerComment extends controllerValidator
 {
     private $objectModelComment;
+    private $objectControllerValidator;
 
     public function __construct()
     {
         $this->objectModelComment = new modelComment();
+        $this->objectControllerValidator = new controllerValidator();
     }
 
 
@@ -21,48 +24,81 @@ class controllerComment
     }
     public function updateCommentChapterPageDashboard($idComment,$stateComment)
     {
-        $this->updateComment($idComment,$stateComment);
-        header("Location: ./index.php?callPage=dashboardDisplayListLineComment&stateComment=0" );
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
+            and controllerValidator::isEmptyValidator(compact($idComment,$stateComment)))
+        {
+            $this->updateComment($idComment,$stateComment);
+            header("Location: ./index.php?callPage=dashboardDisplayListLineComment&stateComment=0" );
+        }
+        return false;
     }
 
     public function updateCommentChapterPageChapter($idComment,$stateComment,$idChapter)
     {
-        $this->updateComment($idComment,$stateComment);
-        header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
+            and controllerValidator::isEmptyValidator(compact($idComment,$stateComment,$idChapter)))
+        {
+            $this->updateComment($idComment,$stateComment);
+            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+        }
+        return false;
     }
 
     public function sendCommentChapter($idChapter,$contentComment,$pseudo)
     {
-        if ((isset($idChapter)) and (isset($contentComment)) and (isset($pseudo)))
-        {
-            $pseudo = htmlspecialchars($pseudo, ENT_QUOTES);
-            $contentComment = htmlspecialchars($contentComment, ENT_QUOTES);
+        $arrayArg = compact($idChapter,$contentComment,$pseudo);
 
-            $this->sendComment($idChapter,$contentComment,$pseudo);
-            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
-        }
-        else
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
+            and controllerValidator::isEmptyValidator($arrayArg))
         {
-            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+            controllerValidator::protectedInputValidator($arrayArg);
+                extract($arrayArg);
+                $this->sendComment($idChapter,$contentComment,$pseudo);
+                header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
         }
+        return false;
     }
 
     public function displayOneCommentPageDashboard($idComment)
     {
-        $displayOneComment = $this->displayOneComment($idComment);
-        require_once("./view/viewPageDashboard.php");
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
+            and controllerValidator::isEmptyValidator(compact($idComment)))
+        {
+            $displayOneComment = $this->displayOneComment($idComment);
+            require_once("./view/viewPageDashboard.php");
+        }
+        return false;
     }
 
     public function displayListLineCommentByStateCommentPageDashboard($stateComment)
     {
-        $displayListLineCommentByStateComment = $this->displayListLineCommentByStateComment($stateComment);
-        require_once("./view/viewPageDashboard.php");
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
+            and controllerValidator::isEmptyValidator(compact($stateComment)))
+        {
+            $displayListLineCommentByStateComment = $this->displayListLineCommentByStateComment($stateComment);
+            require_once("./view/viewPageDashboard.php");
+        }
+        return false;
     }
 
     public function displayListCommentForOneChapterPageChapter($idChapter)
     {
         return $this->displayListCommentForOneChapter($idChapter);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private function displayListCommentForOneChapter($idChapter)
     {

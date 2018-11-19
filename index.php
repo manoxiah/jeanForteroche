@@ -8,7 +8,7 @@ require_once("./controller/controllerPageCgu.php");
 require_once("./controller/controllerUser.php");
 require_once('./controller/controllerComment.php');
 require_once('./controller/controllerMessage.php');
-require_once('./controller/controllerValidator.php');
+
 
 $objectControllerChapter = new controllerChapter();
 $objectControllerMessage = new controllerMessage();
@@ -17,7 +17,6 @@ $objectControllerUser = new controllerUser();
 $objectControllerPageCgu = new controllerPageCgu();
 $objectControllerPageContact = new controllerPageContact();
 $objectControllerPageAbout = new controllerPageAbout();
-$objectControllerValidator = new controllerValidator();
 
 
 if (isset($_GET['callPage']))
@@ -77,7 +76,7 @@ if (isset($_GET['callPage']))
           $objectControllerChapter->sendNewChapter($_POST['numberChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
           break;
       case "sendCommentChapter":
-          $objectControllerComment->sendCommentChapter($_GET['idChapter'],$_POST['contentComment'],$_POST['pseudo']);
+          $objectControllerComment->sendCommentChapter($_POST['idChapter'],$_POST['contentComment'],$_POST['pseudo']);
           break;
       case "updateCommentChapterPageChapter":
           $objectControllerComment->updateCommentChapterPageChapter($_GET['idComment'],$_GET['stateComment'],$_GET['idChapter']);
@@ -98,13 +97,10 @@ if (isset($_GET['callPage']))
           $objectControllerChapter->deleteChapterPageDashboard($_GET['idChapter']);
           break;
       case "updateChapterPageDashboard":
-          $objectControllerChapter->updateChapterPageDashboard($_GET['idChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
+          $objectControllerChapter->updateChapterPageDashboard($_POST['stateChapter'],$_POST['idChapter'],$_POST['titleChapter'],$_POST['contentChapter']);
           break;
       case "replyMessage":
-          $objectControllerMessage->replyMessage($_GET['idMessage'],$_GET['email'],$_GET['stateMessage'],$_POST['subject'],$_POST['contentReplyMessage']);
-          break;
-      case "test":
-          $objectControllerValidator->requestValidator($_GET['a']);
+          $objectControllerMessage->replyMessage($_POST['idMessage'],$_POST['email'],$_POST['stateMessage'],$_POST['subject'],$_POST['contentReplyMessage']);
           break;
   }
 }

@@ -18,8 +18,11 @@
         else
         {
             ?>
-            <form action="./index.php?callPage=replyMessage&stateMessage=2&idMessage=<?= $displayOneMessage['id'] ?>&email==<?= $displayOneMessage['email'] ?>" method="post">
+            <form action="./index.php?callPage=replyMessage" method="post">
                 <div class="form-group">
+                    <input type="hidden" class="form-control" id="idMessage" name="idMessage" value="<?= $displayOneMessage['id'] ?>" required >
+                    <input type="hidden" class="form-control" id="email" name="email" value="<?= $displayOneMessage['email'] ?>" required >
+                    <input type="hidden" class="form-control" id="stateMessage" name="stateMessage" value="2" required >
                     <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet" required >
                 </div>
                 <div class="form-group">

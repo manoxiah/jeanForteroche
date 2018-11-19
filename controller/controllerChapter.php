@@ -26,9 +26,10 @@ class controllerChapter extends controllerValidator
         $arrayArg = compact($stateChapter,$idChapter,$titleChapter,$contentChapter);
 
         if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg)
-            and controllerValidator::protectedInputValidator($arrayArg))
+            and controllerValidator::isEmptyValidator($arrayArg))
         {
+            controllerValidator::protectedInputValidator($arrayArg);
+            extract($arrayArg);
             $this->updateChapter($idChapter,$titleChapter,$contentChapter);
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
         }
@@ -36,9 +37,13 @@ class controllerChapter extends controllerValidator
     }
     public function deleteChapterPageDashboard($idChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idChapter)))
+        $arrayArg = compact($idChapter);
+
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
+            and controllerValidator::isEmptyValidator($arrayArg))
         {
+            controllerValidator::protectedInputValidator($arrayArg);
+            extract($arrayArg);
             $this->deleteChapter($idChapter);
             $this->objectControllerComment->deleteListCommentForOneChapter($idChapter);
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1" );
@@ -48,9 +53,13 @@ class controllerChapter extends controllerValidator
 
     public function updateStateChapterPageDashboard($idChapter,$stateChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idChapter,$stateChapter)))
+        $arrayArg = compact($idChapter,$stateChapter);
+
+        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
+            and controllerValidator::isEmptyValidator($arrayArg))
         {
+            controllerValidator::protectedInputValidator($arrayArg);
+            extract($arrayArg);
             $this->updateStateChapter($idChapter,$stateChapter);
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1" );
         }
@@ -61,9 +70,10 @@ class controllerChapter extends controllerValidator
         $arrayArg = compact($numberChapter,$titleChapter,$contentChapter);
 
         if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg)
-            and controllerValidator::protectedInputValidator($arrayArg))
+            and controllerValidator::isEmptyValidator($arrayArg))
         {
+            controllerValidator::protectedInputValidator($arrayArg);
+            extract($arrayArg);
             $this->objectModelChapter->sendNewChapter($numberChapter,$titleChapter,$contentChapter);
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
         }

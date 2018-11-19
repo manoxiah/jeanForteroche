@@ -14,7 +14,9 @@
         if ((isset($_GET['stateChapter'])) and ($_GET['stateChapter'] == 0 ) or ($_GET['stateChapter'] == 2 ))
         {
             ?>
-            <form action="./index.php?callPage=updateStateChapterPageDashboard&stateChapter=1&idChapter=<?= $displayOneChapterPageChapter['id'] ?>" method="post">
+            <form action="./index.php?callPage=updateStateChapterPageDashboard" method="post">
+                <input type="hidden" class="form-control" name ="stateChapter" id="stateChapter" value="1">
+                <input type="hidden" class="form-control" name ="idChapter" id="idChapter" value="<?= $displayOneChapterPageChapter['id'] ?>">
                 <button type="submit" id="submit" name="submit" class="btn btn-primary col-lg-1">Publier</button>
             </form>
             <?php
@@ -33,7 +35,9 @@
         if ((isset($_GET['stateChapter'])) and ($_GET['stateChapter'] == 0 ) or ($_GET['stateChapter'] == 1 ))
         {
         ?>
-            <form action="./index.php?callPage=updateStateChapterPageDashboard&stateChapter=2&idChapter=<?= $displayOneChapterPageChapter['id'] ?>" method="post">
+            <form action="./index.php?callPage=updateStateChapterPageDashboard" method="post">
+                <input type="hidden" class="form-control" name ="stateChapter" id="stateChapter" value="2">
+                <input type="hidden" class="form-control" name ="idChapter" id="idChapter" value="<?= $displayOneChapterPageChapter['id'] ?>">
                 <button type="submit" id="submit" name="submit" class="btn btn-primary col-lg-1">Archiver</button>
             </form>
         <?php
@@ -42,7 +46,8 @@
         if ((isset($_GET['stateChapter'])) and ($_GET['stateChapter'] == 0 ) or ($_GET['stateChapter'] == 1 ) or ($_GET['stateChapter'] == 2 ))
         {
             ?>
-            <form action="./index.php?callPage=deleteChapterPageDashboard&idChapter=<?= $displayOneChapterPageChapter['id'] ?>" method="post">
+            <form action="./index.php?callPage=deleteChapterPageDashboard" method="post">
+                <input type="hidden" class="form-control" name ="idChapter" id="idChapter" value="<?= $displayOneChapterPageChapter['id'] ?>">
                 <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right col-lg-1">Supprimer</button>
             </form>
             <?php
@@ -60,7 +65,7 @@
                 <div class="modal-body">
                     <form action="./index.php?callPage=updateChapterPageDashboard" method="post">
                         <div class="form-group">
-                            <input type="hidden" class="form-control" name ="stateChapter" id="stateChapter" value="<?= $displayOneChapterPageChapter['stateChapter'] ?>">
+                            <input type="hidden" class="form-control" name ="stateChapter" id="stateChapter" value="0">
                             <input type="hidden" class="form-control" name ="idChapter" id="idChapter" value="<?= $displayOneChapterPageChapter['id'] ?>">
                             <label for="titleChapter">Titre du chapitre</label>
                             <input type="text" class="form-control" name ="titleChapter" id="titleChapter" value="<?=  $displayOneChapterPageChapter['titleChapter'] ?>">

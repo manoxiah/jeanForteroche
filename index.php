@@ -91,10 +91,10 @@ if (isset($_GET['callPage']))
           $objectControllerMessage->updateMessagePageDashboard($_GET['idMessage'],$_GET['stateMessage']);
           break;
       case "updateStateChapterPageDashboard":
-          $objectControllerChapter->updateStateChapterPageDashboard($_GET['idChapter'],$_GET['stateChapter']);
+          $objectControllerChapter->updateStateChapterPageDashboard($_POST['idChapter'],$_POST['stateChapter']);
           break;
       case "deleteChapterPageDashboard":
-          $objectControllerChapter->deleteChapterPageDashboard($_GET['idChapter']);
+          $objectControllerChapter->deleteChapterPageDashboard($_POST['idChapter']);
           break;
       case "updateChapterPageDashboard":
           $objectControllerChapter->updateChapterPageDashboard($_POST['stateChapter'],$_POST['idChapter'],$_POST['titleChapter'],$_POST['contentChapter']);

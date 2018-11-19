@@ -7,14 +7,12 @@ class controllerChapter extends controllerValidator
 {
     private $objectModelChapter;
     private $objectControllerComment;
-    private $objectControllerValidator;
 
 
     public function __construct()
     {
         $this->objectModelChapter = new modelChapter();
         $this->objectControllerComment = new controllerComment();
-        $this->objectControllerValidator = new controllerValidator();
     }
 
 
@@ -25,10 +23,10 @@ class controllerChapter extends controllerValidator
     {
         $arrayArg = compact($stateChapter,$idChapter,$titleChapter,$contentChapter);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
-            controllerValidator::protectedInputValidator($arrayArg);
+            $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->updateChapter($idChapter,$titleChapter,$contentChapter);
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
@@ -39,10 +37,10 @@ class controllerChapter extends controllerValidator
     {
         $arrayArg = compact($idChapter);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
-            controllerValidator::protectedInputValidator($arrayArg);
+            $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->deleteChapter($idChapter);
             $this->objectControllerComment->deleteListCommentForOneChapter($idChapter);
@@ -55,10 +53,10 @@ class controllerChapter extends controllerValidator
     {
         $arrayArg = compact($idChapter,$stateChapter);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
-            controllerValidator::protectedInputValidator($arrayArg);
+            $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->updateStateChapter($idChapter,$stateChapter);
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1" );
@@ -69,10 +67,10 @@ class controllerChapter extends controllerValidator
     {
         $arrayArg = compact($numberChapter,$titleChapter,$contentChapter);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
-            controllerValidator::protectedInputValidator($arrayArg);
+            $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->objectModelChapter->sendNewChapter($numberChapter,$titleChapter,$contentChapter);
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
@@ -82,8 +80,8 @@ class controllerChapter extends controllerValidator
 
     public function displayOneChapterPageDashboard($idChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idChapter)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($idChapter)))
         {
             $displayOneChapterPageChapter = $this->displayOneChapter($idChapter);
             require_once("./view/viewPageDashboard.php");
@@ -93,8 +91,8 @@ class controllerChapter extends controllerValidator
 
     public function displayOneChapterPageChapter($idChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idChapter)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($idChapter)))
         {
             $displayOneChapterPageChapter = $this->displayOneChapter($idChapter);
             $displayListCommentForOneChapterPageChapter = $this->objectControllerComment->displayListCommentForOneChapterPageChapter($idChapter);
@@ -105,8 +103,8 @@ class controllerChapter extends controllerValidator
 
     public function displayListLineChapterPageDashboard($stateChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($stateChapter)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($stateChapter)))
         {
             $displayListLineChapterPageDashboard = $this->displayListChapter($stateChapter);
             require_once("./view/viewPageDashboard.php");
@@ -116,8 +114,8 @@ class controllerChapter extends controllerValidator
 
     public function displayListChapterPageChapter($stateChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($stateChapter)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($stateChapter)))
         {
             $displayListChapterPageChapter = $this->displayListChapter($stateChapter);
             require_once("./view/chapter/viewDisplayListSmallChapter.php");
@@ -127,8 +125,8 @@ class controllerChapter extends controllerValidator
 
     public function displayListChapterPageHome($stateChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($stateChapter)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($stateChapter)))
         {
             $displayListChapterPageHome = $this->displayListChapter($stateChapter);
             $_GET['colorButtonNavHome'] = 0;

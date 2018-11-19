@@ -4,17 +4,6 @@
 class controllerValidator
 {
 
-    protected $varGet;
-    protected $varPost;
-
-
-    public function __construct()
-    {
-        $this->varGet = "GET";
-        $this->varPost = "POST";
-    }
-
-
 
     /**
      * @param $method

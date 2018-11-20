@@ -7,12 +7,10 @@ require_once('./controller/controllerValidator.php');
 class controllerUser extends controllerValidator
 {
     private $objectModelUser;
-    private $objectControllerValidator;
 
     public function __construct()
     {
         $this->objectModelUser = new modelUser();
-        $this->objectControllerValidator = new controllerValidator();
     }
 
 
@@ -35,10 +33,10 @@ class controllerUser extends controllerValidator
     {
         $arrayArg = compact($email,$password);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
-            controllerValidator::protectedInputValidator($arrayArg);
+            $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
 
             $connectionUser = $this->loginUser($email,$password);

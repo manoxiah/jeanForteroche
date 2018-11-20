@@ -11,7 +11,10 @@ foreach ($displayListCommentForOneChapterPageChapter as $donneesDisplayListComme
         <div class="col-lg-12 sectionComment">
             <h4><strong><?= $donneesDisplayListCommentForOneChapter['pseudo'] ?></strong></h4>
             <div class="comment"><?= $donneesDisplayListCommentForOneChapter['contentComment'] ?></div><br/>
-            <form action="./index.php?callPage=updateCommentChapterPageChapter&stateComment=1&idChapter=<?= $donneesDisplayListCommentForOneChapter['idChapter'] ?>&idComment=<?= $donneesDisplayListCommentForOneChapter['id'] ?>" method="post">
+            <form action="./index.php?callPage=updateCommentChapterPageChapter" method="post">
+                <input type="hidden" class="form-control" name ="stateComment" id="stateComment" value="1">
+                <input type="hidden" class="form-control" name ="idChapter" id="idChapter" value="<?= $donneesDisplayListCommentForOneChapter['idChapter'] ?>">
+                <input type="hidden" class="form-control" name ="idComment" id="idComment" value="<?= $donneesDisplayListCommentForOneChapter['id'] ?>">
               <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right col-lg-1">Signaler</button>
             </form><br/>
             <em class="autor">Publié le <?= $publicationDateFr ?></em>

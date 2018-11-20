@@ -6,28 +6,29 @@ require_once('./controller/controllerValidator.php');
 class controllerComment extends controllerValidator
 {
     private $objectModelComment;
-    private $objectControllerValidator;
 
     public function __construct()
     {
         $this->objectModelComment = new modelComment();
-        $this->objectControllerValidator = new controllerValidator();
     }
 
 
 
 
 
-    public function deleteListCommentForOneChapter($idChapter)
-    {
-        $this->deleteCommentForOneChapter($idChapter);
-    }
+    // function à sécuriser
+
     public function updateCommentChapterPageDashboard($idComment,$stateComment)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idComment,$stateComment)))
+        $arrayArg = compact($idComment,$stateComment);
+
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
+            $this->protectedInputValidator($arrayArg);
+            extract($arrayArg);
             $this->updateComment($idComment,$stateComment);
+            $_GET['colorButtonNavDashboard'] = 0;
             header("Location: ./index.php?callPage=dashboardDisplayListLineComment&stateComment=0" );
         }
         return false;
@@ -35,9 +36,13 @@ class controllerComment extends controllerValidator
 
     public function updateCommentChapterPageChapter($idComment,$stateComment,$idChapter)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idComment,$stateComment,$idChapter)))
+        $arrayArg = compact($idComment,$stateComment,$idChapter);
+
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
+            $this->protectedInputValidator($arrayArg);
+            extract($arrayArg);
             $this->updateComment($idComment,$stateComment);
             header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
         }
@@ -48,23 +53,24 @@ class controllerComment extends controllerValidator
     {
         $arrayArg = compact($idChapter,$contentComment,$pseudo);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
-            controllerValidator::protectedInputValidator($arrayArg);
-                extract($arrayArg);
-                $this->sendComment($idChapter,$contentComment,$pseudo);
-                header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+            $this->protectedInputValidator($arrayArg);
+            extract($arrayArg);
+            $this->sendComment($idChapter,$contentComment,$pseudo);
+            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
         }
         return false;
     }
 
     public function displayOneCommentPageDashboard($idComment)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idComment)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($idComment)))
         {
             $displayOneComment = $this->displayOneComment($idComment);
+            $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -72,20 +78,34 @@ class controllerComment extends controllerValidator
 
     public function displayListLineCommentByStateCommentPageDashboard($stateComment)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($stateComment)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($stateComment)))
         {
             $displayListLineCommentByStateComment = $this->displayListLineCommentByStateComment($stateComment);
+            $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
         return false;
     }
+
+    
+    
+    
+    
+
+
+
+    // function déjà sécurisées
 
     public function displayListCommentForOneChapterPageChapter($idChapter)
     {
         return $this->displayListCommentForOneChapter($idChapter);
     }
 
+    public function deleteListCommentForOneChapter($idChapter)
+    {
+        $this->deleteCommentForOneChapter($idChapter);
+    }
 
 
 
@@ -99,6 +119,7 @@ class controllerComment extends controllerValidator
 
 
 
+    // function private
 
     private function displayListCommentForOneChapter($idChapter)
     {

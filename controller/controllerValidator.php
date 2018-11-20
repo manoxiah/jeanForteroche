@@ -19,7 +19,7 @@ class controllerValidator
      * @param $params
      * @return bool
      */
-    public function isEmptyValidator($params) //un tableau de valeurs est attendu ici
+    public function isEmptyValidator($params)
     {
         if (is_array($params))
         {
@@ -40,7 +40,7 @@ class controllerValidator
      * @param $params
      * @return array
      */
-    public function protectedInputValidator($params)  //un tableau de valeurs est attendu ici
+    public function protectedInputValidator($params)
     {
         if (is_array($params))
         {

@@ -51,8 +51,8 @@ if (isset($_GET['callPage']))
       case "dashboardDisplayOneChapter":
           $objectControllerChapter->displayOneChapterPageDashboard($_GET['idChapter']);
           break;
-      case "dashboardEditChapter":
-          require_once("./view/viewPageDashboard.php");
+      case "dashboardDisplayEditChapter":
+          $objectControllerChapter->displayFormEditChapter();
           break;
       case "dashboardDisplayListLineComment":
           $objectControllerComment->displayListLineCommentByStateCommentPageDashboard($_GET['stateComment']);
@@ -79,16 +79,16 @@ if (isset($_GET['callPage']))
           $objectControllerComment->sendCommentChapter($_POST['idChapter'],$_POST['contentComment'],$_POST['pseudo']);
           break;
       case "updateCommentChapterPageChapter":
-          $objectControllerComment->updateCommentChapterPageChapter($_GET['idComment'],$_GET['stateComment'],$_GET['idChapter']);
+          $objectControllerComment->updateCommentChapterPageChapter($_POST['idComment'],$_POST['stateComment'],$_POST['idChapter']);
           break;
       case "updateCommentChapterPageDashboard":
-          $objectControllerComment->updateCommentChapterPageDashboard($_GET['idComment'],$_GET['stateComment']);
+          $objectControllerComment->updateCommentChapterPageDashboard($_POST['idComment'],$_POST['stateComment']);
           break;
       case "sendMessageFormContact":
           $objectControllerMessage->sendMessageFormContact($_POST['name'],$_POST['email'],$_POST['contentMessage']);
           break;
       case "updateMessage":
-          $objectControllerMessage->updateMessagePageDashboard($_GET['idMessage'],$_GET['stateMessage']);
+          $objectControllerMessage->updateMessagePageDashboard($_POST['idMessage'],$_POST['stateMessage']);
           break;
       case "updateStateChapterPageDashboard":
           $objectControllerChapter->updateStateChapterPageDashboard($_POST['idChapter'],$_POST['stateChapter']);

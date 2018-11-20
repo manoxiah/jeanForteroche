@@ -8,8 +8,10 @@
 <?php
       if (( $_GET['stateComment'] == 0) or ( $_GET['stateComment'] == 1) or ( $_GET['stateComment'] == 3))
       { ?>
-          <form action="./index.php?callPage=updateCommentChapterPageDashboard&stateComment=2&idComment=<?= $displayOneComment['id'] ?>" method="post">
-          <button type="submit" id="submit" name="submit" class="btn btn-primary col-lg-1">Valider</button>
+          <form action="./index.php?callPage=updateCommentChapterPageDashboard" method="post">
+              <input type="hidden" class="form-control" name ="stateComment" id="stateComment" value="2">
+              <input type="hidden" class="form-control" name ="idComment" id="idComment" value="<?= $displayOneComment['id'] ?>">
+              <button type="submit" id="submit" name="submit" class="btn btn-primary col-lg-1">Valider</button>
           </form>
 <?php
       }
@@ -17,8 +19,10 @@
 
     if (( $_GET['stateComment'] == 0) or ( $_GET['stateComment'] == 1) or ( $_GET['stateComment'] == 2))
     { ?>
-        <form action="./index.php?callPage=updateCommentChapterPageDashboard&stateComment=3&idComment=<?= $displayOneComment['id'] ?>" method="post">
-        <button type="submit" id="submit" name="submit" class="btn btn-primary col-lg-1">Bloquer</button>
+        <form action="./index.php?callPage=updateCommentChapterPageDashboard" method="post">
+            <input type="hidden" class="form-control" name ="stateComment" id="stateComment" value="3">
+            <input type="hidden" class="form-control" name ="idComment" id="idComment" value="<?= $displayOneComment['id'] ?>">
+            <button type="submit" id="submit" name="submit" class="btn btn-primary col-lg-1">Bloquer</button>
         </form>
 <?php
     }

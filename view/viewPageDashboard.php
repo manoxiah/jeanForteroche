@@ -14,7 +14,7 @@ ob_start(); ?>
                 <li class="menuDashboard <?php if ((isset($_GET['stateChapter'])) and ($_GET['stateChapter'] == 0 )) { echo "colorMenu"; } else { echo""; } ?>">En écriture</li></a>
             <a href="./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=2">
                 <li class="menuDashboard <?php if ((isset($_GET['stateChapter'])) and ($_GET['stateChapter'] == 2 )) { echo "colorMenu"; } else { echo""; } ?>">Les archivés</li></a>
-            <a href="./index.php?callPage=dashboardEditChapter&editChapter=1">
+            <a href="./index.php?callPage=dashboardDisplayEditChapter">
                 <li class="menuDashboard <?php if ((isset($_GET['editChapter'])) and ($_GET['editChapter'] == '1')) { echo "colorMenu"; } else { echo""; } ?>">Nouveau chapitres</li></a>
         </ul>
         <h4><strong>-- Les commentaires</strong></h4>
@@ -49,7 +49,7 @@ ob_start(); ?>
         $titlePage = "Tableau de bord";
         require_once("./view/chapter/viewDisplayOneChapter.php");
     }
-    else if ((isset($_GET['callPage'])) and ($_GET['callPage'] == 'dashboardEditChapter')) {
+    else if ((isset($_GET['callPage'])) and ($_GET['callPage'] == 'dashboardDisplayEditChapter')) {
         $titlePage = "Tableau de bord";
         require_once("./view/chapter/viewEditChapter.php");
     }

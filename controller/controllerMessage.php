@@ -6,30 +6,30 @@ require_once('./controller/controllerValidator.php');
 class controllerMessage extends controllerValidator
 {
     private $objectModelMessage;
-    private $objectControllerValidator;
 
     public function __construct()
     {
         $this->objectModelMessage = new modelMessage();
-        $this->objectControllerValidator = new controllerValidator();
     }
 
 
 
 
+    // function déjà sécurisées
 
     public function replyMessage($idMessage,$email,$stateMessage,$subject,$contentReplyMessage)
     {
         $arrayArg = compact($idMessage,$email,$stateMessage,$subject,$contentReplyMessage);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
-            controllerValidator::protectedInputValidator($arrayArg);
+            $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
 
             $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
             $this->updateMessage($idMessage,$stateMessage);
+            $_GET['colorButtonNavDashboard'] = 0;
             header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
         }
         return false;
@@ -37,10 +37,16 @@ class controllerMessage extends controllerValidator
 
     public function updateMessagePageDashboard($idMessage,$stateMessage)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idMessage,$stateMessage)))
+        $arrayArg = compact($idMessage,$stateMessage);
+
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
+            $this->protectedInputValidator($arrayArg);
+            extract($arrayArg);
+
             $this->updateMessage($idMessage,$stateMessage);
+            $_GET['colorButtonNavDashboard'] = 0;
             header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
         }
         return false;
@@ -49,22 +55,25 @@ class controllerMessage extends controllerValidator
     {
         $arrayArg = compact($name,$email,$contentMessage);
 
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varPost))
-            and controllerValidator::isEmptyValidator($arrayArg)
-            and controllerValidator::protectedInputValidator($arrayArg))
+        if (($this->requestValidator('POST'))
+            and $this->isEmptyValidator($arrayArg))
         {
+            $this->protectedInputValidator($arrayArg);
+            extract($arrayArg);
+
             $this->sendMessage($name,$email,$contentMessage);
-            header("Location: ./index.php?callPage=contact" );
+            header("Location: ./index.php?callPage=contact&colorButtonNavContact=0" );
         }
         return false;
     }
 
     public function displayOneMessagePageDashboard($idMessage)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($idMessage)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($idMessage)))
         {
             $displayOneMessage = $this->displayOneMessage($idMessage);
+            $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -72,10 +81,11 @@ class controllerMessage extends controllerValidator
 
     public function displayListLineMessageByStateMessagePageDashboard($stateMessage)
     {
-        if ((controllerValidator::requestValidator($this->objectControllerValidator->varGet))
-            and controllerValidator::isEmptyValidator(compact($stateMessage)))
+        if (($this->requestValidator('GET'))
+            and $this->isEmptyValidator(compact($stateMessage)))
         {
             $displayListLineMessage = $this->displayListLineMessageByStateMessage($stateMessage);
+            $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -95,6 +105,7 @@ class controllerMessage extends controllerValidator
 
 
 
+    // function private
 
     private function displayListLineMessageByStateMessage($stateMessage)
     {

@@ -17,7 +17,15 @@ class controllerChapter extends controllerValidator
 
 
 
-/* function public */
+    //function à sécuriser
+
+
+    public function displayFormEditChapter()
+    {
+        $_GET['editChapter'] = 1;
+        $_GET['colorButtonNavDashboard'] = 0;
+        require_once("./view/viewPageDashboard.php");
+    }
 
     public function updateChapterPageDashboard($stateChapter,$idChapter,$titleChapter,$contentChapter)
     {
@@ -29,10 +37,12 @@ class controllerChapter extends controllerValidator
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->updateChapter($idChapter,$titleChapter,$contentChapter);
+            $_GET['colorButtonNavDashboard'] = 0;
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
         }
         return false;
     }
+
     public function deleteChapterPageDashboard($idChapter)
     {
         $arrayArg = compact($idChapter);
@@ -44,6 +54,7 @@ class controllerChapter extends controllerValidator
             extract($arrayArg);
             $this->deleteChapter($idChapter);
             $this->objectControllerComment->deleteListCommentForOneChapter($idChapter);
+            $_GET['colorButtonNavDashboard'] = 0;
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1" );
         }
         return false;
@@ -59,10 +70,12 @@ class controllerChapter extends controllerValidator
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->updateStateChapter($idChapter,$stateChapter);
+            $_GET['colorButtonNavDashboard'] = 0;
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1" );
         }
         return false;
     }
+
     public function sendNewChapter($numberChapter,$titleChapter,$contentChapter)
     {
         $arrayArg = compact($numberChapter,$titleChapter,$contentChapter);
@@ -73,6 +86,7 @@ class controllerChapter extends controllerValidator
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->objectModelChapter->sendNewChapter($numberChapter,$titleChapter,$contentChapter);
+            $_GET['colorButtonNavDashboard'] = 0;
             header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
         }
         return false;
@@ -84,6 +98,7 @@ class controllerChapter extends controllerValidator
             and $this->isEmptyValidator(compact($idChapter)))
         {
             $displayOneChapterPageChapter = $this->displayOneChapter($idChapter);
+            $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -107,6 +122,7 @@ class controllerChapter extends controllerValidator
             and $this->isEmptyValidator(compact($stateChapter)))
         {
             $displayListLineChapterPageDashboard = $this->displayListChapter($stateChapter);
+            $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -144,7 +160,7 @@ class controllerChapter extends controllerValidator
 
 
 
-/* function private traitement */
+    //function private
 
     private function displayListChapter($stateChapter = null)
     {

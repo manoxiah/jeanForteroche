@@ -9,10 +9,12 @@ class controllerSession
     {
         $_SESSION['messageFlash'][$key] = $contentMessage;
     }
+
     public function getMessage()
     {
         return isset($_SESSION['messageFlash']);
     }
+    
     public function deleteMessage()
     {
         $MessageFlash = $_SESSION['messageFlash'];

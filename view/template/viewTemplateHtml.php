@@ -63,19 +63,17 @@
                 </ul>
             </nav>
         </header>
+
+        <div class="row col-md-12">
+            <?php if ( isset($_GET['messageFlash']) && !empty($_GET['messageFlash']) ) {
+                ?>
+                <div class="col-lg-12 <?= $_GET['key'] ?>">
+                    <strong><em ><?= $_GET['messageFlash'] ?></em></strong>
+                </div>
+            <?php } ?>
+        </div>
+
       <section class="row"><br/><br/>
-          <div class="col-md-12">
-              <?php if ( isset($_SESSION['flash']) && !empty($_SESSION['flash']) ) {
-                  $msg = \Core\Lib\Auth\Auth::getInstance()->session->deleteMessage() ?>
-                  <?php foreach ($msg as $k => $v): ?>
-                      <div class="row col-md-8 col-md-offset-2">
-                          <div class="alert alert-<?= $k ?> alert-dismissable fade in">
-                              <i class="icon icon-times-circle icon-lg"></i>
-                              <strong> <?= $v ?> </strong>
-                          </div>
-                      </div>
-                  <?php endforeach; } ?>
-          </div>
         <div class="col-lg-12 bodyPage">
           <?php echo"$content"; ?>
         </div>

@@ -2,14 +2,18 @@
 
 require_once("./view/backOffice/model/modelComment.php");
 require_once('./controller/controllerValidator.php');
+require_once('./controller/controllerSession.php');
 
 class controllerComment extends controllerValidator
 {
     private $objectModelComment;
+    private $objectControllerSession;
 
     public function __construct()
     {
         $this->objectModelComment = new modelComment();
+        $this->objectControllerSession = new controllerSession();
+
     }
 
 
@@ -59,7 +63,9 @@ class controllerComment extends controllerValidator
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->sendComment($idChapter,$contentComment,$pseudo);
-            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+            $key = "alertGeneric backgroundColorAlertInvalid";
+            $messageFlash = "votre commentaire a été envoyé";
+            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0&key=$key&messageFlash=$messageFlash" );
         }
         return false;
     }

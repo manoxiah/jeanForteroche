@@ -82,6 +82,8 @@ class controllerComment extends controllerValidator
             and $this->isEmptyValidator(compact($stateComment)))
         {
             $displayListLineCommentByStateComment = $this->displayListLineCommentByStateComment($stateComment);
+            $countCommentByStateComment = $this->countCommentByStateComment($stateComment);
+            $countCommentByStateComment = $countCommentByStateComment['numberComment'] - 10;
             $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
@@ -131,6 +133,12 @@ class controllerComment extends controllerValidator
     {
         $dataComment = $this->objectModelComment->getDisplayListLineCommentByStateComment($stateComment);
         return $dataComment;
+    }
+
+    private function countCommentByStateComment($stateComment)
+    {
+        $dataCountComment = $this->objectModelComment->countCommentByStateComment($stateComment);
+        return $dataCountComment;
     }
 
     private function displayOneComment($idComment)

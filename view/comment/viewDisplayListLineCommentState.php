@@ -17,4 +17,28 @@
 <?php
     }
 ?>
+
 </ul>
+
+<?php
+    if ($countCommentByStateComment == 1)
+    {
+         ?>
+        <div class="col-lg-12 alertGeneric backgroundColorAlertInvalid">
+            <strong class="numberUnreadComment" ><?= $countCommentByStateComment ?></strong>
+            <em >commentaire plus récent est en fille d'attente, il vous faut traiter ceux qui sont en visuel pour y accéder.</em></strong>
+        </div>
+        <?php
+    }
+   else if ($countCommentByStateComment > 1)
+    {
+        ?>
+        <div class="col-lg-12 alertGeneric backgroundColorAlertInvalid">
+            <strong class="numberUnreadComment" ><?= $countCommentByStateComment ?></strong>
+            <em >commentaires plus récent sont en fille d'attente, il vous faut traiter ceux qui sont en visuel pour y accéder.</em></strong>
+        </div>
+        <?php
+    }
+    else { return false;}
+?>
+

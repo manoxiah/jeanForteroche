@@ -44,9 +44,9 @@ class controllerUser extends controllerValidator
             if (password_verify($password,$connectionUser['mdp']))
             {
                 session_start ();
-                $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
-                $_SESSION['admin'] = "jeanForteroche";
+                $_SESSION['jf']['email'] = $email;
+                $_SESSION['jf']['password'] = $password;
+                $_SESSION['jf']['admin'] = "jeanForteroche";
 
                 header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0" );
             }

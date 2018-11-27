@@ -85,6 +85,8 @@ class controllerMessage extends controllerValidator
             and $this->isEmptyValidator(compact($stateMessage)))
         {
             $displayListLineMessage = $this->displayListLineMessageByStateMessage($stateMessage);
+            $countMessageByStateMessage = $this->countCommentByStateMessage($stateMessage);
+            $countMessageByStateMessage = $countMessageByStateMessage['numberMessage'] - 10;
             $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
@@ -110,6 +112,12 @@ class controllerMessage extends controllerValidator
     private function displayListLineMessageByStateMessage($stateMessage)
     {
         $dataMessage = $this->objectModelMessage->getDisplayListLineMessageByStateMessage($stateMessage);
+        return $dataMessage ;
+    }
+
+    private function countCommentByStateMessage($stateMessage)
+    {
+        $dataMessage = $this->objectModelMessage->countCommentByStateMessage($stateMessage);
         return $dataMessage ;
     }
 

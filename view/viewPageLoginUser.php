@@ -18,6 +18,6 @@ ob_start(); ?>
     </form>
 </div>
 
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean();
 
-<?php require_once('./view/template/viewTemplateHtml.php');
+require_once('./view/template/viewTemplateHtml.php');

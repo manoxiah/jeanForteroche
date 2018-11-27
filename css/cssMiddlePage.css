@@ -1,9 +1,36 @@
 
+/** generic **/
+
+    .alertGeneric
+    {
+        padding: 20px;
+        margin: 60px 0;
+        box-shadow: 6px 6px 10px 1px grey;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 3px;
+    }
+
+    .backgroundColorAlertInvalid
+    {
+        background-color: lightcoral;
+    }
+
+    .backgroundColorAlertValid
+    {
+        background-color: lightgreen;
+    }
+
+    .numberUnreadComment
+    {
+        font-size: 22px;
+    }
 
     .sectionDetail
     {
         : 50px 0;
     }
+
     .colorButtonNav
     {
         color: white;
@@ -120,7 +147,6 @@
       .menuDashboard {
         padding: 10px 20px 10px 30px;
         border-bottom: 1px solid grey;
-        border-radius: 3px;
       }
       .menuDashboard:hover {
         cursor: pointer;

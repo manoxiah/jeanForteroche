@@ -20,9 +20,16 @@ class modelComment
 
     public function getDisplayListLineCommentByStateComment($stateComment)
     {
-        $donneesDisplayListLineCommentByStateComment = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentChapter WHERE stateComment=:a ORDER BY publicationDate DESC');
+        $donneesDisplayListLineCommentByStateComment = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentChapter WHERE stateComment=:a ORDER BY publicationDate ASC LIMIT 0,10');
         $donneesDisplayListLineCommentByStateComment->execute(array('a'=>$stateComment));
         return $donneesDisplayListLineCommentByStateComment->fetchAll();
+    }
+
+    public function countCommentByStateComment($stateComment)
+    {
+        $donneesCountCommentByStateComment = $this->BDD->connexionBDD()->prepare('SELECT COUNT(*) as numberComment FROM commentChapter WHERE stateComment=:a');
+        $donneesCountCommentByStateComment->execute(array('a'=>$stateComment));
+        return $donneesCountCommentByStateComment->fetch();
     }
 
     public function getDisplayOneComment($idComment)

@@ -13,9 +13,16 @@ class modelMessage
 
     public function getDisplayListLineMessageByStateMessage($stateMessage)
     {
-        $donneesDisplayListLineMessageByStateMessage = $this->BDD->connexionBDD()->prepare('SELECT * FROM message WHERE stateMessage=:a ORDER BY publicationDate DESC');
+        $donneesDisplayListLineMessageByStateMessage = $this->BDD->connexionBDD()->prepare('SELECT * FROM message WHERE stateMessage=:a ORDER BY publicationDate ASC LIMIT 0,10');
         $donneesDisplayListLineMessageByStateMessage->execute(array('a'=>$stateMessage));
         return $donneesDisplayListLineMessageByStateMessage->fetchAll();
+    }
+
+    public function countCommentByStateMessage($stateMessage)
+    {
+        $donneesCountCommentByStateMessage = $this->BDD->connexionBDD()->prepare('SELECT COUNT(*) as numberMessage FROM message WHERE stateMessage=:a');
+        $donneesCountCommentByStateMessage->execute(array('a'=>$stateMessage));
+        return $donneesCountCommentByStateMessage->fetch();
     }
 
     public function getDisplayOneMessage($idMessage)

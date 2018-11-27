@@ -13,58 +13,69 @@
 
   <body class="row">
     <div class="col- container-fluid">
-      <header class="row">
-          <nav class="navHeader navbar navbar-inverse">
-            <div class="col-lg-3 navbar-header logo">
-              <span>Jean FORTEROCHE</span>
-            </div>
-              <ul class="col-lg-6 nav navbar-nav pull-right">
-                  <li class="col-lg-1.5">
-                      <a href="./index.php?callPage=home&stateChapter=1&colorButtonNavHome=0">
-                          <span class="<?php if ((isset($_GET['colorButtonNavHome'])) and ($_GET['colorButtonNavHome'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
-                      </a>
-                  </li>
-                  <li class="col-lg-2">
-                      <a href="./index.php?callPage=chapterDisplayListChapter&stateChapter=1&colorButtonNavChapter=0">
-                          <span class="<?php if ((isset($_GET['colorButtonNavChapter'])) and ($_GET['colorButtonNavChapter'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Chapitres</span>
-                      </a>
-                  </li>
-                  <li class="col-lg-1.5">
-                      <a href="./index.php?callPage=about&colorButtonNavAbout=0">
-                          <span class="<?php if ((isset($_GET['colorButtonNavAbout'])) and ($_GET['colorButtonNavAbout'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">A propos</span>
-                      </a>
-                  </li>
-                  <li class="col-lg-1.5">
-                      <a href="./index.php?callPage=contact&colorButtonNavContact=0">
-                          <span class="<?php if ((isset($_GET['colorButtonNavContact'])) and ($_GET['colorButtonNavContact'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Contact</span>
-                      </a>
-                  </li>
-                  <?php
-                  if ((isset($_SESSION['admin'])) and ($_SESSION['admin'] == "jeanForteroche"))
-                  {
-                      ?>
-                      <li class="col-lg-1.5">
-                          <a href="./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0">
-                              <span class="<?php if ((isset($_GET['colorButtonNavDashboard'])) and ($_GET['colorButtonNavDashboard'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>" >Outils</span>
-                          </a>
-                      </li>
-                      <li class="col-lg-3 pull-right">
-                          <a href="./index.php?callPage=logoutUser">
-                              <span>Déconnexion</span>
-                          </a>
-                      </li>
-                      <?php
-                  }
-                  else
-                  {
+        <header class="row">
+            <nav class="navHeader navbar navbar-inverse">
+                <div class="col-lg-3 navbar-header logo">
+                    <span>Jean FORTEROCHE</span>
+                </div>
+                <ul class="col-lg-6 nav navbar-nav pull-right">
+                    <li class="col-lg-1.5">
+                        <a href="./index.php?callPage=home&stateChapter=1&colorButtonNavHome=0">
+                            <span class="<?php if ((isset($_GET['colorButtonNavHome'])) and ($_GET['colorButtonNavHome'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
+                        </a>
+                    </li>
+                    <li class="col-lg-2">
+                        <a href="./index.php?callPage=chapterDisplayListChapter&stateChapter=1&colorButtonNavChapter=0">
+                            <span class="<?php if ((isset($_GET['colorButtonNavChapter'])) and ($_GET['colorButtonNavChapter'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Chapitres</span>
+                        </a>
+                    </li>
+                    <li class="col-lg-1.5">
+                        <a href="./index.php?callPage=about&colorButtonNavAbout=0">
+                            <span class="<?php if ((isset($_GET['colorButtonNavAbout'])) and ($_GET['colorButtonNavAbout'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">A propos</span>
+                        </a>
+                    </li>
+                    <li class="col-lg-1.5">
+                        <a href="./index.php?callPage=contact&colorButtonNavContact=0">
+                            <span class="<?php if ((isset($_GET['colorButtonNavContact'])) and ($_GET['colorButtonNavContact'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Contact</span>
+                        </a>
+                    </li>
+                    <?php
+                    if ((isset($_SESSION['jf']['admin'])) and ($_SESSION['jf']['admin'] == "jeanForteroche"))
+                    {
+                        ?>
+                        <li class="col-lg-1.5">
+                            <a href="./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0">
+                                <span class="<?php if ((isset($_GET['colorButtonNavDashboard'])) and ($_GET['colorButtonNavDashboard'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>" >Outils</span>
+                            </a>
+                        </li>
+                        <li class="col-lg-3 pull-right">
+                            <a href="./index.php?callPage=logoutUser">
+                                <span>Déconnexion</span>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                    else
+                    {
                         echo"";
-                  }
-                  ?>
-              </ul>
-          </nav>
-      </header>
-
+                    }
+                    ?>
+                </ul>
+            </nav>
+        </header>
       <section class="row"><br/><br/>
+          <div class="col-md-12">
+              <?php if ( isset($_SESSION['flash']) && !empty($_SESSION['flash']) ) {
+                  $msg = \Core\Lib\Auth\Auth::getInstance()->session->deleteMessage() ?>
+                  <?php foreach ($msg as $k => $v): ?>
+                      <div class="row col-md-8 col-md-offset-2">
+                          <div class="alert alert-<?= $k ?> alert-dismissable fade in">
+                              <i class="icon icon-times-circle icon-lg"></i>
+                              <strong> <?= $v ?> </strong>
+                          </div>
+                      </div>
+                  <?php endforeach; } ?>
+          </div>
         <div class="col-lg-12 bodyPage">
           <?php echo"$content"; ?>
         </div>

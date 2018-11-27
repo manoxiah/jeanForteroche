@@ -55,8 +55,8 @@
         else { echo"";}
 ?>
 
-    <div class="modal fade" id="formulaire">
-        <div class="modal-dialog">
+    <div class="modal fade bd-example-modal-lg" id="formulaire">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">x</button>
@@ -71,7 +71,7 @@
                             <input type="text" class="form-control" name ="titleChapter" id="titleChapter" value="<?=  $displayOneChapterPageChapter['titleChapter'] ?>">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" type="textarea" name="contentChapter" id="textareaEditChapter" >
+                            <textarea class="form-control" type="textarea" name="contentChapter" id="textareaEditChapter">
                                 <?=  $displayOneChapterPageChapter['chapter'] ?>
                             </textarea>
                             <h6>Remplissez tous les champs</h6>

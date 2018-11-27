@@ -9,7 +9,7 @@ class controllerValidator
      * @param $method
      * @return bool
      */
-    public function requestValidator($method) // on passe ici la méthode que l'on attend
+    public function requestValidator($method)
     {
         return $_SERVER['REQUEST_METHOD'] === $method;
 

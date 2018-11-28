@@ -18,9 +18,9 @@ class modelComment
         return $donneesDisplayListCommentForOneChapter->fetchAll();
     }
 
-    public function getDisplayListLineCommentByStateComment($stateComment)
+    public function getDisplayListLineCommentByStateComment($stateComment,$numberCommentForPage,$numberCurrentPage)
     {
-        $donneesDisplayListLineCommentByStateComment = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentChapter WHERE stateComment=:a ORDER BY publicationDate ASC LIMIT 0,10');
+        $donneesDisplayListLineCommentByStateComment = $this->BDD->connexionBDD()->prepare('SELECT * FROM commentChapter WHERE stateComment=:a ORDER BY publicationDate DESC LIMIT '. (($numberCurrentPage-1)*$numberCommentForPage) .','. $numberCommentForPage .'');
         $donneesDisplayListLineCommentByStateComment->execute(array('a'=>$stateComment));
         return $donneesDisplayListLineCommentByStateComment->fetchAll();
     }

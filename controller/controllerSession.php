@@ -5,9 +5,9 @@
 class controllerSession
 {
 
-    public function setMessage($key, $contentMessage)
+    public function setMessage($key, $content)
     {
-        $_SESSION['messageFlash'][$key] = $contentMessage;
+        return $_SESSION['messageFlash'][$key] = $content;
     }
 
     public function getMessage()

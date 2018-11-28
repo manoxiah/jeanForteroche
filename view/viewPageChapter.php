@@ -9,6 +9,7 @@ ob_start(); ?>
         require_once('./view/comment/viewDisplayListCommentForOneChapter.php');
         ?>
     </div>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require_once('./view/template/viewTemplateHtml.php');

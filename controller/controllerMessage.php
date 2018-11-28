@@ -2,14 +2,17 @@
 
 require_once("./view/backOffice/model/modelMessage.php");
 require_once('./controller/controllerValidator.php');
+require_once('./controller/controllerSession.php');
 
 class controllerMessage extends controllerValidator
 {
     private $objectModelMessage;
+    private $flash;
 
     public function __construct()
     {
         $this->objectModelMessage = new modelMessage();
+        $this->flash = new controllerSession();
     }
 
 
@@ -29,7 +32,7 @@ class controllerMessage extends controllerValidator
 
             $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
             $this->updateMessage($idMessage,$stateMessage);
-            $_GET['colorButtonNavDashboard'] = 0;
+
             header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
         }
         return false;
@@ -46,7 +49,7 @@ class controllerMessage extends controllerValidator
             extract($arrayArg);
 
             $this->updateMessage($idMessage,$stateMessage);
-            $_GET['colorButtonNavDashboard'] = 0;
+
             header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
         }
         return false;
@@ -60,9 +63,10 @@ class controllerMessage extends controllerValidator
         {
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
-
             $this->sendMessage($name,$email,$contentMessage);
-            header("Location: ./index.php?callPage=contact&colorButtonNavContact=0" );
+            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Votre message a été envoyé.');
+
+            header("Location: ./index.php?callPage=contact" );
         }
         return false;
     }
@@ -73,7 +77,7 @@ class controllerMessage extends controllerValidator
             and $this->isEmptyValidator(compact($idMessage)))
         {
             $displayOneMessage = $this->displayOneMessage($idMessage);
-            $_GET['colorButtonNavDashboard'] = 0;
+
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -87,7 +91,7 @@ class controllerMessage extends controllerValidator
             $displayListLineMessage = $this->displayListLineMessageByStateMessage($stateMessage);
             $countMessageByStateMessage = $this->countCommentByStateMessage($stateMessage);
             $countMessageByStateMessage = $countMessageByStateMessage['numberMessage'] - 10;
-            $_GET['colorButtonNavDashboard'] = 0;
+
             require_once("./view/viewPageDashboard.php");
         }
         return false;

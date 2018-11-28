@@ -1,19 +1,17 @@
 <?php
 
 require_once("./view/backOffice/model/modelComment.php");
-require_once('./controller/controllerValidator.php');
 require_once('./controller/controllerSession.php');
 
 class controllerComment extends controllerValidator
 {
     private $objectModelComment;
-    private $objectControllerSession;
+    private $flash;
 
     public function __construct()
     {
         $this->objectModelComment = new modelComment();
-        $this->objectControllerSession = new controllerSession();
-
+        $this->flash = new controllerSession();
     }
 
 
@@ -32,7 +30,7 @@ class controllerComment extends controllerValidator
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->updateComment($idComment,$stateComment);
-            $_GET['colorButtonNavDashboard'] = 0;
+
             header("Location: ./index.php?callPage=dashboardDisplayListLineComment&stateComment=0" );
         }
         return false;
@@ -48,7 +46,9 @@ class controllerComment extends controllerValidator
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->updateComment($idComment,$stateComment);
-            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0" );
+            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Votre signalement de commentaire a été envoyé avec succès.');
+
+            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter" );
         }
         return false;
     }
@@ -63,9 +63,9 @@ class controllerComment extends controllerValidator
             $this->protectedInputValidator($arrayArg);
             extract($arrayArg);
             $this->sendComment($idChapter,$contentComment,$pseudo);
-            $key = "alertGeneric backgroundColorAlertInvalid";
-            $messageFlash = "votre commentaire a été envoyé";
-            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter&colorButtonNavChapter=0&key=$key&messageFlash=$messageFlash" );
+            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Le commentaire a été mis à jour.');
+
+            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter" );
         }
         return false;
     }
@@ -76,7 +76,6 @@ class controllerComment extends controllerValidator
             and $this->isEmptyValidator(compact($idComment)))
         {
             $displayOneComment = $this->displayOneComment($idComment);
-            $_GET['colorButtonNavDashboard'] = 0;
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -87,10 +86,21 @@ class controllerComment extends controllerValidator
         if (($this->requestValidator('GET'))
             and $this->isEmptyValidator(compact($stateComment)))
         {
-            $displayListLineCommentByStateComment = $this->displayListLineCommentByStateComment($stateComment);
             $countCommentByStateComment = $this->countCommentByStateComment($stateComment);
-            $countCommentByStateComment = $countCommentByStateComment['numberComment'] - 10;
-            $_GET['colorButtonNavDashboard'] = 0;
+            $numberComment = $countCommentByStateComment['numberComment'];
+            $numberCommentForPage = 15;
+            $numberPage = ceil($numberComment/$numberCommentForPage);
+
+            if ((isset($_GET['p'])) and $_GET['p']>0 and $_GET['p']<=$numberPage)
+            {
+                $numberCurrentPage = $_GET['p'];
+            }
+            else
+            {
+                $numberCurrentPage = 1;
+            }
+            $displayListLineCommentByStateComment = $this->displayListLineCommentByStateComment($stateComment,$numberCommentForPage,$numberCurrentPage);
+
             require_once("./view/viewPageDashboard.php");
         }
         return false;
@@ -135,9 +145,9 @@ class controllerComment extends controllerValidator
         return $dataDisplayListCommentForOneChapter;
     }
 
-    private function displayListLineCommentByStateComment($stateComment)
+    private function displayListLineCommentByStateComment($stateComment,$numberCommentForPage,$numberCurrentPage)
     {
-        $dataComment = $this->objectModelComment->getDisplayListLineCommentByStateComment($stateComment);
+        $dataComment = $this->objectModelComment->getDisplayListLineCommentByStateComment($stateComment,$numberCommentForPage,$numberCurrentPage);
         return $dataComment;
     }
 

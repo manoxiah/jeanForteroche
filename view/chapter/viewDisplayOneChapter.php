@@ -7,7 +7,8 @@
         <div class="principalTitleSection"><strong>-- <?= $displayOneChapterPageChapter['numberChapter'] ?> --</strong></div>
         <h4><em><strong><?=  $displayOneChapterPageChapter['titleChapter'] ?></strong></em></h4><br/><br/>
         <div class="contentChapter"><?=  $displayOneChapterPageChapter['chapter'] ?></div><br/><br/>
-        <em class="autor">Publié par Jean Forteroche le <?=  $dateFr ?></em></div>
+        <em class="autor">Publié par Jean Forteroche le <?=  $dateFr ?></em>
+        </div>
     <?php
     if ((isset($_GET['callPage'])) and ($_GET['callPage'] == 'dashboardDisplayOneChapter'))
     {

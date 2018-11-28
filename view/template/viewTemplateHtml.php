@@ -21,22 +21,31 @@
                 <ul class="col-lg-6 nav navbar-nav pull-right">
                     <li class="col-lg-1.5">
                         <a href="./index.php?callPage=home&stateChapter=1&colorButtonNavHome=0">
-                            <span class="<?php if ((isset($_GET['colorButtonNavHome'])) and ($_GET['colorButtonNavHome'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
+                            <span class="<?php
+                            if ($_GET['callPage'] == "home")
+                                { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
                         </a>
                     </li>
                     <li class="col-lg-2">
                         <a href="./index.php?callPage=chapterDisplayListChapter&stateChapter=1&colorButtonNavChapter=0">
-                            <span class="<?php if ((isset($_GET['colorButtonNavChapter'])) and ($_GET['colorButtonNavChapter'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Chapitres</span>
+                            <span class="<?php
+                            if (($_GET['callPage'] == "chapterDisplayListChapter") or
+                                ($_GET['callPage'] == "chapterDisplayOneChapter"))
+                                { echo 'colorButtonNav';} else { echo '';}?>">Chapitres</span>
                         </a>
                     </li>
                     <li class="col-lg-1.5">
                         <a href="./index.php?callPage=about&colorButtonNavAbout=0">
-                            <span class="<?php if ((isset($_GET['colorButtonNavAbout'])) and ($_GET['colorButtonNavAbout'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">A propos</span>
+                            <span class="<?php
+                            if ($_GET['callPage'] == "about")
+                                { echo 'colorButtonNav';} else { echo '';}?>">A propos</span>
                         </a>
                     </li>
                     <li class="col-lg-1.5">
                         <a href="./index.php?callPage=contact&colorButtonNavContact=0">
-                            <span class="<?php if ((isset($_GET['colorButtonNavContact'])) and ($_GET['colorButtonNavContact'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>">Contact</span>
+                            <span class="<?php
+                            if ($_GET['callPage'] == "contact")
+                                { echo 'colorButtonNav';} else { echo '';}?>">Contact</span>
                         </a>
                     </li>
                     <?php
@@ -45,7 +54,15 @@
                         ?>
                         <li class="col-lg-1.5">
                             <a href="./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0">
-                                <span class="<?php if ((isset($_GET['colorButtonNavDashboard'])) and ($_GET['colorButtonNavDashboard'] == 0)) { echo 'colorButtonNav';} else { echo '';}?>" >Outils</span>
+                                <span class="<?php
+                                if (($_GET['callPage'] == "dashboardDisplayListLineChapter") or
+                                    ($_GET['callPage'] == "dashboardDisplayEditChapter") or
+                                    ($_GET['callPage'] == "dashboardDisplayOneChapter") or
+                                    ($_GET['callPage'] == "dashboardDisplayListLineComment") or
+                                    ($_GET['callPage'] == "dashboardDisplayOneComment") or
+                                    ($_GET['callPage'] == "dashboardDisplayListLineMessage") or
+                                    ($_GET['callPage'] == "dashboardDisplayOneMessage"))
+                                    { echo 'colorButtonNav';} else { echo '';}?>" >Outils</span>
                             </a>
                         </li>
                         <li class="col-lg-3 pull-right">
@@ -63,18 +80,20 @@
                 </ul>
             </nav>
         </header>
-
-        <div class="row col-md-12">
-            <?php if ( isset($_GET['messageFlash']) && !empty($_GET['messageFlash']) ) {
-                ?>
-                <div class="col-lg-12 <?= $_GET['key'] ?>">
-                    <strong><em ><?= $_GET['messageFlash'] ?></em></strong>
-                </div>
-            <?php } ?>
-        </div>
-
       <section class="row"><br/><br/>
-        <div class="col-lg-12 bodyPage">
+          <?php
+          if ( isset($_SESSION['messageFlash']) && !empty($_SESSION['messageFlash']) )
+          {
+              $msg = new controllerSession();
+              $msg = $msg->deleteMessage();
+              foreach ($msg as $k => $v): ?>
+              <div class="col-lg-11 <?= $k ?>">
+                  <em><strong> <?= $v ?> </strong></em>
+              </div>
+              <?php
+              endforeach;
+          } ?>
+        <div class="col-lg-12">
           <?php echo"$content"; ?>
         </div>
       </section>

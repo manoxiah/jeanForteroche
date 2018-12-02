@@ -42,10 +42,11 @@
                         <input type="hidden" class="form-control" id="idMessage" name="idMessage" value="<?= $displayOneMessage['id'] ?>" required >
                         <input type="hidden" class="form-control" id="email" name="email" value="<?= $displayOneMessage['email'] ?>" required >
                         <input type="hidden" class="form-control" id="stateMessage" name="stateMessage" value="2" required >
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet" required >
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet ( 100 caractères maximum )" required >
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" type="textarea" name="contentReplyMessage" id="message" placeholder="Message" rows="7" required ></textarea>
+                        <h6>Remplissez tous les champs</h6>
                     </div><br/>
                     <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right col-lg-2">Répondre</button><br/><br/>
                 </form>

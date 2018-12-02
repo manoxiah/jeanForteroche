@@ -26,15 +26,21 @@ class controllerMessage extends controllerValidator
         if (($this->requestValidator('POST'))
             and $this->isEmptyValidator($arrayArg))
         {
-            $this->protectedInputValidator($arrayArg);
-            extract($arrayArg);
+            if(($this->input100CharacterMaxValidator($subject)) == true )
+            {
+                $this->protectedInputValidator($arrayArg);
+                extract($arrayArg);
+                $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
+                $this->updateMessage($idMessage,$stateMessage);
+                $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Votre message a été envoyé.');
+                header("Location: ./index.php?callPage=dashboardDisplayOneMessage&stateMessage=$stateMessage&idMessage=$idMessage" );
+            }
+            else
+            {
+                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Votre message n\'a pas été envoyé, merci de vérifier les informations que vous avez rentrées.');
+                header("Location: ./index.php?callPage=dashboardDisplayOneMessage&stateMessage=$stateMessage&idMessage=$idMessage" );
+            }
 
-            $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
-            $this->updateMessage($idMessage,$stateMessage);
-            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Votre message a été envoyé.');
-
-
-            header("Location: ./index.php?callPage=dashboardDisplayOneMessage&stateMessage=$stateMessage&idMessage=$idMessage" );
         }
         return false;
     }
@@ -62,12 +68,19 @@ class controllerMessage extends controllerValidator
         if (($this->requestValidator('POST'))
             and $this->isEmptyValidator($arrayArg))
         {
-            $this->protectedInputValidator($arrayArg);
-            extract($arrayArg);
-            $this->sendMessage($name,$email,$contentMessage);
-            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Votre message a été envoyé.');
-
-            header("Location: ./index.php?callPage=contact" );
+            if((($this->input25CharacterMaxValidator($name)) == true ) and (($this->inputEmailValidator($email)) == true ))
+            {
+                $this->protectedInputValidator($arrayArg);
+                extract($arrayArg);
+                $this->sendMessage($name,$email,$contentMessage);
+                $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Votre message a été envoyé.');
+                header("Location: ./index.php?callPage=contact" );
+            }
+            else
+            {
+                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Votre message n\'a pas été envoyé, merci de vérifier votre formulaire.');
+                header("Location: ./index.php?callPage=contact" );
+            }
         }
         return false;
     }

@@ -38,23 +38,31 @@ class controllerUser extends controllerValidator
         if (($this->requestValidator('POST'))
             and $this->isEmptyValidator($arrayArg))
         {
-            $this->protectedInputValidator($arrayArg);
-            extract($arrayArg);
-
-            $connectionUser = $this->loginUser($email,$password);
-
-            if (password_verify($password,$connectionUser['mdp']))
+            if(($this->inputEmailValidator($email)) == true )
             {
-                session_start ();
-                $_SESSION['jf']['email'] = $email;
-                $_SESSION['jf']['password'] = $password;
-                $_SESSION['jf']['admin'] = "jeanForteroche";
+                $this->protectedInputValidator($arrayArg);
+                extract($arrayArg);
 
-                header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0" );
+                $connectionUser = $this->loginUser($email,$password);
+
+                if (password_verify($password,$connectionUser['mdp']))
+                {
+                        session_start ();
+                        $_SESSION['jf']['email'] = $email;
+                        $_SESSION['jf']['password'] = $password;
+                        $_SESSION['jf']['admin'] = "jeanForteroche";
+
+                        header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0" );
+                }
+                else
+                {
+                    $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Les champs du formulaire ne sont pas valides, merci de recommencer.');
+                    header("Location: ./index.php?callPage=loginUser" );
+                }
             }
             else
             {
-                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Les champs du formulaire ne sont pas valides, merci de recommencer.');
+                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Votre Email n\'est pas valide, merci de recommencer.');
                 header("Location: ./index.php?callPage=loginUser" );
             }
         }

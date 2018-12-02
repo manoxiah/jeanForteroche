@@ -35,12 +35,20 @@ class controllerChapter extends controllerValidator
         if (($this->requestValidator('POST'))
             and $this->isEmptyValidator($arrayArg))
         {
-            $this->protectedInputValidator($arrayArg);
-            extract($arrayArg);
-            $this->updateChapter($idChapter,$titleChapter,$contentChapter);
-            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Les modifications du chapitre ont été enregistré.');
+            if(($this->input100CharacterMaxValidator($titleChapter)) == true )
+            {
+                $this->protectedInputValidator($arrayArg);
+                extract($arrayArg);
+                $this->updateChapter($idChapter,$titleChapter,$contentChapter);
+                $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Les modifications du chapitre ont été enregistré.');
+                header("Location: ./index.php?callPage=dashboardDisplayOneChapter&stateChapter=$stateChapter&idChapter=$idChapter&colorButtonNavDashboard=0" );
+            }
+            else
+            {
+                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Les modifications du chapitre n\'ont pas été enregistré.');
+                header("Location: ./index.php?callPage=dashboardDisplayOneChapter&stateChapter=$stateChapter&idChapter=$idChapter&colorButtonNavDashboard=0" );
+            }
 
-            header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
         }
         return false;
     }
@@ -86,12 +94,20 @@ class controllerChapter extends controllerValidator
         if (($this->requestValidator('POST'))
             and $this->isEmptyValidator($arrayArg))
         {
-            $this->protectedInputValidator($arrayArg);
-            extract($arrayArg);
-            $this->objectModelChapter->sendNewChapter($numberChapter,$titleChapter,$contentChapter);
-            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Le chapitre a été enregistré.');
-
-            header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
+            if((($this->input25CharacterMaxValidator($numberChapter)) == true ) and
+                (($this->input100CharacterMaxValidator($titleChapter)) == true ))
+            {
+                $this->protectedInputValidator($arrayArg);
+                extract($arrayArg);
+                $this->objectModelChapter->sendNewChapter($numberChapter,$titleChapter,$contentChapter);
+                $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Le chapitre a été enregistré.');
+                header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
+            }
+            else
+            {
+                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Le chapitre n\'a pas été enregistré.');
+                header("Location: ./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=0" );
+            }
         }
         return false;
     }

@@ -70,6 +70,7 @@
                             <input type="hidden" class="form-control" name ="idChapter" id="idChapter" value="<?= $displayOneChapterPageChapter['id'] ?>">
                             <label for="titleChapter">Titre du chapitre</label>
                             <input type="text" class="form-control" name ="titleChapter" id="titleChapter" value="<?=  $displayOneChapterPageChapter['titleChapter'] ?>">
+                            <h6>100 caractères maximum</h6>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" type="textarea" name="contentChapter" id="textareaEditChapter">

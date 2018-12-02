@@ -57,15 +57,23 @@ class controllerComment extends controllerValidator
     {
         $arrayArg = compact($idChapter,$contentComment,$pseudo);
 
-        if (($this->requestValidator('POST'))
-            and $this->isEmptyValidator($arrayArg))
+        if (($this->requestValidator('POST')) and
+            ($this->isEmptyValidator($arrayArg)))
         {
-            $this->protectedInputValidator($arrayArg);
-            extract($arrayArg);
-            $this->sendComment($idChapter,$contentComment,$pseudo);
-            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Le commentaire a été mis à jour.');
+            if(($this->input25CharacterMaxValidator($pseudo)) == true )
+            {
+                $this->protectedInputValidator($arrayArg);
+                extract($arrayArg);
+                $this->sendComment($idChapter,$contentComment,$pseudo);
+                $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Le commentaire a été mis à jour.');
 
-            header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter" );
+                header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter" );
+            }
+            else
+            {
+                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Le commentaire n\'a pas été envoyer, merci de vérifier votre formulaire.');
+                header("Location: ./index.php?callPage=chapterDisplayOneChapter&idChapter=$idChapter" );
+            }
         }
         return false;
     }

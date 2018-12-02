@@ -7,7 +7,7 @@
   <h4>Laisser un commentaire</h4>
     <div class="form-group">
      <input type="hidden" class="form-control" id="idChapter" name="idChapter" value="<?php echo $displayOneChapterPageChapter['id'] ?>" >
-     <input type="text" class="form-control" name="pseudo" placeholder="Pseudo" required >
+     <input type="text" class="form-control" name="pseudo" placeholder="Pseudo ( 25 caractères maximum )" required >
     </div>
     <div class="form-group">
      <textarea class="form-control" type="textarea" name="contentComment" id="contentComment" placeholder="Commentaire" rows="7" required ></textarea>

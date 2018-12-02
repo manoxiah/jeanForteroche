@@ -53,4 +53,43 @@ class controllerValidator
             return $datas;
         }
     }
+
+    public function input25CharacterMaxValidator($param)
+    {
+
+        if ( ($param == null ) or (strlen($param) > 25))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public function input100CharacterMaxValidator($param)
+    {
+
+        if ( ($param == null ) or (strlen($param) > 100))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public function inputEmailValidator($param)
+    {
+
+        if (filter_var($param, FILTER_VALIDATE_EMAIL))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

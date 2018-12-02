@@ -3,7 +3,7 @@
 
          foreach ($displayListLineChapterPageDashboard as $donneesDisplayListLineChapterPageDashboard)
       { 
-          $contentChapter = substr($donneesDisplayListLineChapterPageDashboard['chapter'], 0, 100);
+          $contentChapter = substr($donneesDisplayListLineChapterPageDashboard['chapter'], 0, 60);
           $dateFr = date("d/m/Y", strtotime($donneesDisplayListLineChapterPageDashboard['publicationDate']));
   ?>
     <li class="listChapter">

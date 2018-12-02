@@ -1,6 +1,6 @@
 <?php
 
-require_once("./view/backOffice/model/modelChapter.php");
+require_once("./view/model/modelChapter.php");
 require_once('./controller/controllerValidator.php');
 require_once('./controller/controllerSession.php');
 
@@ -25,7 +25,7 @@ class controllerChapter extends controllerValidator
 
     public function displayFormEditChapter()
     {
-        require_once("./view/viewPageDashboard.php");
+        require_once("./view/viewBodyPage/viewPageDashboard.php");
     }
 
     public function updateChapterPageDashboard($stateChapter,$idChapter,$titleChapter,$contentChapter)
@@ -102,7 +102,7 @@ class controllerChapter extends controllerValidator
             and $this->isEmptyValidator(compact($idChapter)))
         {
             $displayOneChapterPageChapter = $this->displayOneChapter($idChapter);
-            require_once("./view/viewPageDashboard.php");
+            require_once("./view/viewBodyPage/viewPageDashboard.php");
         }
         return false;
     }
@@ -114,7 +114,7 @@ class controllerChapter extends controllerValidator
         {
             $displayOneChapterPageChapter = $this->displayOneChapter($idChapter);
             $displayListCommentForOneChapterPageChapter = $this->objectControllerComment->displayListCommentForOneChapterPageChapter($idChapter);
-        require_once("./view/viewPageChapter.php");
+            require_once("./view/viewBodyPage/viewPageChapter.php");
         }
         return false;
     }
@@ -125,7 +125,7 @@ class controllerChapter extends controllerValidator
             and $this->isEmptyValidator(compact($stateChapter)))
         {
             $displayListLineChapterPageDashboard = $this->displayListChapter($stateChapter);
-            require_once("./view/viewPageDashboard.php");
+            require_once("./view/viewBodyPage/viewPageDashboard.php");
         }
         return false;
     }
@@ -147,7 +147,9 @@ class controllerChapter extends controllerValidator
             and $this->isEmptyValidator(compact($stateChapter)))
         {
             $displayListChapterPageHome = $this->displayListChapter($stateChapter);
-            require_once("./view/viewPageHome.php");
+            $_GET['callPage'] = "home";
+
+            require_once("./view/viewBodyPage/viewPageHome.php");
         }
         return false;
 

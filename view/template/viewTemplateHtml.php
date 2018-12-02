@@ -20,14 +20,14 @@
                 </div>
                 <ul class="col-lg-6 nav navbar-nav pull-right">
                     <li class="col-lg-1.5">
-                        <a href="./index.php?callPage=home&stateChapter=1&colorButtonNavHome=0">
+                        <a href="./index.php?callPage=home&stateChapter=1">
                             <span class="<?php
                             if ($_GET['callPage'] == "home")
                                 { echo 'colorButtonNav';} else { echo '';}?>">Accueil</span>
                         </a>
                     </li>
                     <li class="col-lg-2">
-                        <a href="./index.php?callPage=chapterDisplayListChapter&stateChapter=1&colorButtonNavChapter=0">
+                        <a href="./index.php?callPage=chapterDisplayListChapter&stateChapter=1">
                             <span class="<?php
                             if (($_GET['callPage'] == "chapterDisplayListChapter") or
                                 ($_GET['callPage'] == "chapterDisplayOneChapter"))
@@ -35,14 +35,14 @@
                         </a>
                     </li>
                     <li class="col-lg-1.5">
-                        <a href="./index.php?callPage=about&colorButtonNavAbout=0">
+                        <a href="./index.php?callPage=about">
                             <span class="<?php
                             if ($_GET['callPage'] == "about")
                                 { echo 'colorButtonNav';} else { echo '';}?>">A propos</span>
                         </a>
                     </li>
                     <li class="col-lg-1.5">
-                        <a href="./index.php?callPage=contact&colorButtonNavContact=0">
+                        <a href="./index.php?callPage=contact">
                             <span class="<?php
                             if ($_GET['callPage'] == "contact")
                                 { echo 'colorButtonNav';} else { echo '';}?>">Contact</span>
@@ -53,7 +53,7 @@
                     {
                         ?>
                         <li class="col-lg-1.5">
-                            <a href="./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1&colorButtonNavDashboard=0">
+                            <a href="./index.php?callPage=dashboardDisplayListLineChapter&stateChapter=1">
                                 <span class="<?php
                                 if (($_GET['callPage'] == "dashboardDisplayListLineChapter") or
                                     ($_GET['callPage'] == "dashboardDisplayEditChapter") or

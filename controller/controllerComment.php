@@ -1,6 +1,6 @@
 <?php
 
-require_once("./view/backOffice/model/modelComment.php");
+require_once("./view/model/modelComment.php");
 require_once('./controller/controllerSession.php');
 
 class controllerComment extends controllerValidator
@@ -76,7 +76,7 @@ class controllerComment extends controllerValidator
             and $this->isEmptyValidator(compact($idComment)))
         {
             $displayOneComment = $this->displayOneComment($idComment);
-            require_once("./view/viewPageDashboard.php");
+            require_once("./view/viewBodyPage/viewPageDashboard.php");
         }
         return false;
     }
@@ -91,9 +91,9 @@ class controllerComment extends controllerValidator
             $numberCommentForPage = 15;
             $numberPage = ceil($numberComment/$numberCommentForPage);
 
-            if ((isset($_GET['p'])) and $_GET['p']>0 and $_GET['p']<=$numberPage)
+            if ((isset($_GET['numberCurrentPage'])) and $_GET['numberCurrentPage']>0 and $_GET['numberCurrentPage']<=$numberPage)
             {
-                $numberCurrentPage = $_GET['p'];
+                $numberCurrentPage = $_GET['numberCurrentPage'];
             }
             else
             {
@@ -101,7 +101,7 @@ class controllerComment extends controllerValidator
             }
             $displayListLineCommentByStateComment = $this->displayListLineCommentByStateComment($stateComment,$numberCommentForPage,$numberCurrentPage);
 
-            require_once("./view/viewPageDashboard.php");
+            require_once("./view/viewBodyPage/viewPageDashboard.php");
         }
         return false;
     }

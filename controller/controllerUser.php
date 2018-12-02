@@ -1,16 +1,18 @@
 <?php
 
-require_once("./view/backOffice/model/modelUser.php");
-require_once('./controller/controllerValidator.php');
+require_once("./view/model/modelUser.php");
+require_once('./controller/controllerSession.php');
 
 
 class controllerUser extends controllerValidator
 {
     private $objectModelUser;
+    private $flash;
 
     public function __construct()
     {
         $this->objectModelUser = new modelUser();
+        $this->flash = new controllerSession();
     }
 
 
@@ -26,7 +28,7 @@ class controllerUser extends controllerValidator
 
     public function displayPageLoginUser()
     {
-        require_once("./view/viewPageLoginUser.php");
+        require_once("./view/viewBodyPage/viewPageLoginUser.php");
     }
 
     public function validateLoginUser($email,$password)
@@ -52,6 +54,7 @@ class controllerUser extends controllerValidator
             }
             else
             {
+                $this->flash->setMessage('alertGeneric backgroundColorAlertInvalid','Les champs du formulaire ne sont pas valides, merci de recommencer.');
                 header("Location: ./index.php?callPage=loginUser" );
             }
         }

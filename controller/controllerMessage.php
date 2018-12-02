@@ -1,7 +1,6 @@
 <?php
 
-require_once("./view/backOffice/model/modelMessage.php");
-require_once('./controller/controllerValidator.php');
+require_once("./view/model/modelMessage.php");
 require_once('./controller/controllerSession.php');
 
 class controllerMessage extends controllerValidator
@@ -32,8 +31,10 @@ class controllerMessage extends controllerValidator
 
             $this->objectModelMessage->replyMessage($idMessage,$email,$subject,$contentReplyMessage);
             $this->updateMessage($idMessage,$stateMessage);
+            $this->flash->setMessage('alertGeneric backgroundColorAlertValid','Votre message a été envoyé.');
 
-            header("Location: ./index.php?callPage=dashboardDisplayListLineMessage&stateMessage=0" );
+
+            header("Location: ./index.php?callPage=dashboardDisplayOneMessage&stateMessage=$stateMessage&idMessage=$idMessage" );
         }
         return false;
     }
@@ -77,8 +78,9 @@ class controllerMessage extends controllerValidator
             and $this->isEmptyValidator(compact($idMessage)))
         {
             $displayOneMessage = $this->displayOneMessage($idMessage);
+            $displayListReplyMessage = $this->displayListReplyMessage($idMessage);
 
-            require_once("./view/viewPageDashboard.php");
+            require_once("./view/viewBodyPage/viewPageDashboard.php");
         }
         return false;
     }
@@ -88,11 +90,23 @@ class controllerMessage extends controllerValidator
         if (($this->requestValidator('GET'))
             and $this->isEmptyValidator(compact($stateMessage)))
         {
-            $displayListLineMessage = $this->displayListLineMessageByStateMessage($stateMessage);
             $countMessageByStateMessage = $this->countCommentByStateMessage($stateMessage);
-            $countMessageByStateMessage = $countMessageByStateMessage['numberMessage'] - 10;
+            $numberMessage = $countMessageByStateMessage['numberMessage'];
+            $numberMessageForPage = 15;
+            $numberPage = ceil($numberMessage/$numberMessageForPage);
 
-            require_once("./view/viewPageDashboard.php");
+            if ((isset($_GET['numberCurrentPage'])) and $_GET['numberCurrentPage']>0 and $_GET['numberCurrentPage']<=$numberPage)
+            {
+                $numberCurrentPage = $_GET['numberCurrentPage'];
+            }
+            else
+            {
+                $numberCurrentPage = 1;
+            }
+
+            $displayListLineMessage = $this->displayListLineMessageByStateMessage($stateMessage,$numberMessageForPage,$numberCurrentPage);
+
+            require_once("./view/viewBodyPage/viewPageDashboard.php");
         }
         return false;
     }
@@ -113,9 +127,9 @@ class controllerMessage extends controllerValidator
 
     // function private
 
-    private function displayListLineMessageByStateMessage($stateMessage)
+    private function displayListLineMessageByStateMessage($stateMessage,$numberMessageForPage,$numberCurrentPage)
     {
-        $dataMessage = $this->objectModelMessage->getDisplayListLineMessageByStateMessage($stateMessage);
+        $dataMessage = $this->objectModelMessage->getDisplayListLineMessageByStateMessage($stateMessage,$numberMessageForPage,$numberCurrentPage);
         return $dataMessage ;
     }
 
@@ -140,6 +154,12 @@ class controllerMessage extends controllerValidator
     {
         $this->objectModelMessage->updateMessage($idMessage,$stateMessage);
         return true;
+    }
+
+    private function displayListReplyMessage($idMessage)
+    {
+        $dataMessage = $this->objectModelMessage->getDisplayListReplyMessage($idMessage);
+        return $dataMessage ;
     }
 }
 

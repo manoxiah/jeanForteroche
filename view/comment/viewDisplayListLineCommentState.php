@@ -40,7 +40,7 @@
             else
             {
                 ?>
-                <li class="page-item"><a class="page-link" href="./index.php?callPage=dashboardDisplayListLineComment&stateComment=<?= $stateComment ?>&p=<?= $i ?>" ><?= $i ?></a></li>
+                <li class="page-item"><a class="page-link" href="./index.php?callPage=dashboardDisplayListLineComment&stateComment=<?= $stateComment ?>&numberCurrentPage=<?= $i ?>" ><?= $i ?></a></li>
                 <?php
             }
         }

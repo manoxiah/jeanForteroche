@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f5848d0e-d4ef-40ae-a7bf-719c30d5a005" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/picture/viewPictureMountain.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/picture/viewPictureMountain.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,11 +65,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="16" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="16" />
+            <state relative-caret-position="425">
+              <caret line="33" column="85" lean-forward="true" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/controllerValidator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/model/modelLogBDD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="64" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/controllerChapter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="506">
+                <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -151,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/viewPageContact.php" />
         <option value="$PROJECT_DIR$/view/frontend/picture/viewPictureMountain.php" />
         <option value="$PROJECT_DIR$/view/frontend/general/viewContentPreface.php" />
         <option value="$PROJECT_DIR$/view/viewPageAbout.php" />
@@ -159,7 +199,6 @@
         <option value="$PROJECT_DIR$/model/modelChapter.php" />
         <option value="$PROJECT_DIR$/model/modelComment.php" />
         <option value="$PROJECT_DIR$/model/modelMessage.php" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/model/modelUser.php" />
         <option value="$PROJECT_DIR$/view/BackOffice/model/modelChapter.php" />
         <option value="$PROJECT_DIR$/view/BackOffice/model/modelUser.php" />
@@ -195,13 +234,15 @@
         <option value="$PROJECT_DIR$/controller/controllerComment.php" />
         <option value="$PROJECT_DIR$/controller/controllerUser.php" />
         <option value="$PROJECT_DIR$/controller/controllerValidator.php" />
-        <option value="$PROJECT_DIR$/controller/controllerChapter.php" />
         <option value="$PROJECT_DIR$/controller/controllerMessage.php" />
         <option value="$PROJECT_DIR$/view/form/viewFormSendComment.php" />
         <option value="$PROJECT_DIR$/view/viewBodyPage/viewPageContact.php" />
         <option value="$PROJECT_DIR$/view/viewBodyPage/viewPageLoginUser.php" />
         <option value="$PROJECT_DIR$/view/chapter/viewDisplayOneChapter.php" />
         <option value="$PROJECT_DIR$/view/message/viewDisplayOneMessage.php" />
+        <option value="$PROJECT_DIR$/controller/controllerChapter.php" />
+        <option value="$PROJECT_DIR$/view/picture/viewPictureMountain.php" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -284,6 +325,12 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="picture" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -376,7 +423,7 @@
       <workItem from="1542234416120" duration="3915000" />
       <workItem from="1542301561407" duration="91759000" />
       <workItem from="1543335458255" duration="720000" />
-      <workItem from="1543340660967" duration="54033000" />
+      <workItem from="1543340660967" duration="62368000" />
     </task>
     <task id="LOCAL-00001" summary="Mise à niveau ( suppression des duplication du mot new )">
       <created>1542235024767</created>
@@ -469,11 +516,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543786465331</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Ajout des dossiers">
+      <created>1543787574285</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1543787574285</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368086000" />
+    <option name="totallyTimeSpent" value="376421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -486,11 +540,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" weight="0.3295302" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992908" visible="true" weight="0.22281879" />
       <window_info id="Structure" order="2" sideWeight="0.50070924" side_tool="true" weight="0.22483222" />
-      <window_info x="26" y="210" width="1484" height="403" id="Terminal" order="3" side_tool="true" type="WINDOWED" visible="true" weight="0.3281879" />
+      <window_info x="26" y="210" width="1484" height="403" id="Terminal" order="3" side_tool="true" type="WINDOWED" weight="0.3281879" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
@@ -546,32 +601,10 @@
     <MESSAGE value="mise en place des messages flash et de la premiere version de la pagination ( comment dashboard )" />
     <MESSAGE value="nouvelle arborescence ( front ofiice et back office supprimés )" />
     <MESSAGE value="ajout des messages flash sur les erreurs de formulaires" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout des messages flash sur les erreurs de formulaires" />
+    <MESSAGE value="Ajout des dossiers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des dossiers" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/frontOffice/general/viewContentPreface.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="8" selection-start-column="8" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelLogBDD.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelChapter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -728,9 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/model/modelLogBDD.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/model/modelChapter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -763,13 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/viewBodyPage/viewPageHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -808,24 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controllerValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/controllerComment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controllerChapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -874,10 +883,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../composer-setup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1700" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/picture/viewPictureMountain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/viewBodyPage/viewPageHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="16" />
+        <state relative-caret-position="425">
+          <caret line="33" column="85" lean-forward="true" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/model/modelLogBDD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controllerChapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="506">
+            <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

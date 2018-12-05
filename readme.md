@@ -104,8 +104,8 @@ La programmation orientée objet a été introduite par Alan Kay avec Smalltalk.
 
 ## En images :))) ###
 
-![Page Acueil](url_de_l'image "texte pour le titre, facultatif")
+![Page Acueil](https://github.com/manoxiah/jeanForteroche/blob/master/images/accueil%20md.png "Image du site")
 
-![Page chapitre](url_de_l'image "texte pour le titre, facultatif")
+![Page chapitre](https://github.com/manoxiah/jeanForteroche/blob/master/images/chapitre%20md.png "Image du site")
 
-![Tableau de bord](url_de_l'image "texte pour le titre, facultatif")
+![Tableau de bord](https://github.com/manoxiah/jeanForteroche/blob/master/images/tableau%20de%20bord%20md.png "Image du site")

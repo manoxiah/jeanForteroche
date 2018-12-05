@@ -104,7 +104,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="540">
-                <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+                <caret line="110" column="11" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
               </first_editor>
               <second_editor />
             </state>
@@ -292,6 +292,11 @@
             <path>
               <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="jeanForteroche" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="view" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -421,7 +426,7 @@
       <workItem from="1542234416120" duration="3915000" />
       <workItem from="1542301561407" duration="91759000" />
       <workItem from="1543335458255" duration="720000" />
-      <workItem from="1543340660967" duration="64365000" />
+      <workItem from="1543340660967" duration="64663000" />
     </task>
     <task id="LOCAL-00001" summary="Mise à niveau ( suppression des duplication du mot new )">
       <created>1542235024767</created>
@@ -535,11 +540,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544047257277</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="3eme test readme">
+      <created>1544049074436</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1544049074436</updated>
+    </task>
+    <task id="LOCAL-00018" summary="3eme test readme">
+      <created>1544049217537</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1544049217537</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378418000" />
+    <option name="totallyTimeSpent" value="378716000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,7 +635,8 @@
     <MESSAGE value="Ajout des dossiers" />
     <MESSAGE value="test 1er jet du readme" />
     <MESSAGE value="2eme test readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="2eme test readme" />
+    <MESSAGE value="3eme test readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="3eme test readme" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelChapter.php">
@@ -987,7 +1007,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="540">
-            <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+            <caret line="110" column="11" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
           </first_editor>
           <second_editor />
         </state>

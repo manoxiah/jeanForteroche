@@ -50,10 +50,10 @@ Le projet étant de réalier un blog destiné à un écrivain dans le but d'appr
 1.. La méthodologie de la MVC ( Modèle-vue-contrôleur ).
 
 
-## Histoire ##
+### Histoire ###
 Le motif MVC a été créé par Trygve Reenskaug lors de sa visite du Palo Alto Research Center (abr. PARC) en 19781. Le nom original est thing model view editor pattern, puis il a été rapidement renommé model-view-controller pattern1. Le patron MVC a été utilisé la première fois pour créer des interfaces graphiques avec le langage de programmation Smalltalk en 19801.
 
-##Description
+###Description ###
 Une application conforme au motif MVC comporte trois types de modules : les modèles, les vues et les contrôleurs2.
 
 #### Modèle ####
@@ -68,16 +68,44 @@ Une application conforme au motif MVC comporte trois types de modules : les mod�
 
 2.. La métodologie de la POO ( Programmation orientée objet ).
 
-#### Origines ####
+### Origines ###
 Le langage Simula 67, en implantant les Record Class de Hoare, pose les constructions qui seront celles des langages orientés objet à classes : classe, polymorphisme, héritage, etc. Mais c'est réellement par et avec Smalltalk 71 puis Smalltalk 80, inspiré en grande partie par Simula 67 et Lisp, que les principes de la programmation par objets, résultat des travaux d'Alan Kay, sont véhiculés : objet, encapsulation, messages, typage et polymorphisme (via la sous-classification) ; les autres principes, comme l'héritage, sont soit dérivés de ceux-ci ou une implantation. Dans Smalltalk, tout est objet, même les classes. Il est aussi plus qu'un langage à objets, c'est un environnement graphique interactif complet.
 
 À partir des années 1980, commence l'effervescence des langages à objets : C++ (1983), Objective-C (1984), Eiffel (1986), Common Lisp Object System (1988), etc. Les années 1990 voient l'âge d'or de l'extension de la programmation par objets dans les différents secteurs du développement logiciel.
 
-#### Description ####
+### Description ###
 
 La programmation orientée objet a été introduite par Alan Kay avec Smalltalk. Toutefois, ses principes n'ont été formalisés que pendant les années 1980 et, surtout, 1990. Par exemple le typage de second ordre, qui qualifie le typage de la programmation orienté objet (appelé aussi duck typing), n'a été formulé qu'en 1995 par Cook.
 
 ## Voila Voila ##
 
+### Les fonctionnalitées FrontOffice ###
+
+* Lecture des chapitres.
+* Post de commentaires.
+* Contact avec l'auteur.
+* Biographie de l'auteur.
+* Prise de connaissance de la RGPD.
+* Bouton dynamique de signalement de commentaires douteux.
+* Accès aux liens principaux ( réseaux sociaux / Achat en ligne ).
+* Un lien de connexion administrateur.
 
 
+### Les fonctionnalitées BackOffice ###
+
+* Edit / Modification / Supprimer les chapitres.
+* Gestion des commentaires ( valider / Bloquer ).
+* Messagerie ( lecture / possibilité de réponse ).
+* Connexion / Déconnexion ( Compte admin = Auteur ).
+
+## Lien
+
+[Jean Forteroche vous attend...](url_du_lien "Lien vers le site mit sur le web")
+
+## En images :))) ###
+
+![Page Acueil](url_de_l'image "texte pour le titre, facultatif")
+
+![Page chapitre](url_de_l'image "texte pour le titre, facultatif")
+
+![Tableau de bord](url_de_l'image "texte pour le titre, facultatif")

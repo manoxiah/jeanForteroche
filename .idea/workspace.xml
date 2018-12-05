@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5848d0e-d4ef-40ae-a7bf-719c30d5a005" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/picture/viewPictureMountain.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/picture/viewPictureMountain.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,8 +103,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="506">
-                <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+              <first_editor relative-caret-position="540">
+                <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
@@ -423,7 +421,7 @@
       <workItem from="1542234416120" duration="3915000" />
       <workItem from="1542301561407" duration="91759000" />
       <workItem from="1543335458255" duration="720000" />
-      <workItem from="1543340660967" duration="62368000" />
+      <workItem from="1543340660967" duration="64365000" />
     </task>
     <task id="LOCAL-00001" summary="Mise à niveau ( suppression des duplication du mot new )">
       <created>1542235024767</created>
@@ -523,11 +521,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543787574285</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="test 1er jet du readme">
+      <created>1544047077346</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1544047077349</updated>
+    </task>
+    <task id="LOCAL-00016" summary="2eme test readme">
+      <created>1544047257277</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1544047257277</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376421000" />
+    <option name="totallyTimeSpent" value="378418000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +614,9 @@
     <MESSAGE value="nouvelle arborescence ( front ofiice et back office supprimés )" />
     <MESSAGE value="ajout des messages flash sur les erreurs de formulaires" />
     <MESSAGE value="Ajout des dossiers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des dossiers" />
+    <MESSAGE value="test 1er jet du readme" />
+    <MESSAGE value="2eme test readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="2eme test readme" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/view/BackOffice/model/modelChapter.php">
@@ -972,8 +986,8 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="506">
-            <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+          <first_editor relative-caret-position="540">
+            <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>

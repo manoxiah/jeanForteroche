@@ -17,7 +17,7 @@ ob_start();
 
           <div class="ChapterViewHome" title="Cliquez ici pour lire le <?= $donneesListChapterHome['numberChapter'] ?> complet.">
               <h3>
-                  <strong><a href="./index.php?callPage=chapterDisplayOneChapter&idChapter=<?= $donneesListChapterHome['id'] ?>&colorButtonNavChapter=0"><?= $donneesListChapterHome['numberChapter'] ?></a></strong>
+                  <strong><a href="./index.php?callPage=chapterDisplayOneChapter&idChapter=<?= $donneesListChapterHome['id'] ?>"><?= $donneesListChapterHome['numberChapter'] ?></a></strong>
               </h3>
               <h4><em><strong><?= $donneesListChapterHome['titleChapter'] ?></strong></em></h4></div>
           <?php } ?>

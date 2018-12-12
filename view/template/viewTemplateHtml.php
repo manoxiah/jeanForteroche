@@ -89,14 +89,14 @@
               foreach ($msg as $k => $v): ?>
               <div class="col-lg-11 <?= $k ?>">
                   <em><strong> <?= $v ?> </strong></em>
-              </div>
-              <?php
+    </div>
+    <?php
               endforeach;
           } ?>
-        <div class="col-lg-12">
-          <?php echo"$content"; ?>
-        </div>
-      </section>
+    <div class="col-lg-12">
+        <?php echo"$content"; ?>
+    </div>
+    </section>
 
       <footer class="row">
         <div class="col-lg-12 footer">

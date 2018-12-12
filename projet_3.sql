@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 18 nov. 2018 à 10:52
+-- Généré le :  jeu. 06 déc. 2018 à 18:16
 -- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Version de PHP :  7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -61,19 +61,19 @@ CREATE TABLE IF NOT EXISTS `chapter` (
   `stateChapter` int(1) NOT NULL,
   `publicationDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `chapter`
 --
 
 INSERT INTO `chapter` (`id`, `nameBook`, `numberChapter`, `titleChapter`, `chapter`, `stateChapter`, `publicationDate`) VALUES
-(1, 'Un billet simple pour l\'Alaska', 'Chapitre 1', 'Le dÃ©but d\'un long voyage', '<p>Il prend sa sacoche remplie de papiers divers, de livres, de magazines, de crayons... Â« Le poids de mes connaissances. Â» comme il aime dire. En fait, la plupart des livres nâ€™ont jamais Ã©tÃ© ouverts, les papiers sont, pour la plupart, des notes prises sur le vif depuis lâ€™achat de cette sacoche et sont plus proches de la dÃ©composition. Mais parfois, il met le nez dedans et sâ€™amuse dâ€™avoir un jour eu des idÃ©es aussi gÃ©niales. Dâ€™ailleurs, le Dr. ne savait pas vraiment comment son processeur pouvait fonctionner. Dâ€™une architecture trop complexe, le Dr. sâ€™Ã©tait reposÃ© sur les tests effectuÃ©s. Tests trÃ¨s lÃ©gÃ¨rement modifiÃ©s par PrÃ©lude afin de cacher certaines fonctions du processeur. Tu vas le prendre avec toi. Tu brancheras ton tÃ©lÃ©phone mobile dessus afin que je puisse rester en contact avec toi. Il te faudra aussi un cÃ¢ble de liaison pour brancher ton ordinateur sur le rÃ©seau militaire.<p/>', 1, '2018-05-08 18:21:53'),
+(1, 'Un billet simple pour l\'Alaska', 'Chapitre 1', 'Le dÃ©but d\'un long voyage', '<p>Il prend sa sacoche remplie de papiers divers, de livres, de magazines, de crayons... &laquo; Le poids de mes connaissances. &raquo; comme il aime dire. En fait, la plupart des livres n&rsquo;ont jamais &eacute;t&eacute; ouverts, les papiers sont, pour la plupart, des notes prises sur le vif depuis l&rsquo;achat de cette sacoche et sont plus proches de la d&eacute;composition. Mais parfois, il met le nez dedans et s&rsquo;amuse d&rsquo;avoir un jour eu des id&eacute;es aussi g&eacute;niales. D&rsquo;ailleurs, le Dr. ne savait pas vraiment comment son processeur pouvait fonctionner. D&rsquo;une architecture trop complexe, le Dr. s&rsquo;&eacute;tait repos&eacute; sur les tests effectu&eacute;s. Tests tr&egrave;s l&eacute;g&egrave;rement modifi&eacute;s par Pr&eacute;lude afin de cacher certaines fonctions du processeur. Tu vas le prendre avec toi. Tu brancheras ton t&eacute;l&eacute;phone mobile dessus afin que je puisse rester en contact avec toi. Il te faudra aussi un c&acirc;ble de liaison pour brancher ton ordinateur sur le r&eacute;seau militaire.</p>\r\n<p>&nbsp;</p>', 1, '2018-05-08 18:21:53'),
 (2, 'Un billet simple pour l\'Alaska', 'Chapitre 2', 'l\'inconnu', '<p>La grande porte sâ€™ouvrit lourdement en coulissant sur le cÃ´tÃ© gauche sans faire le moindre bruit. DerriÃ¨re la porte, une nouvelle route, Ã©clairÃ©e par de multiples projecteurs accrochÃ©s de chaque cÃ´tÃ©s, sâ€™enfonÃ§ait dans les profondeurs de cet ouvrage. Cette route Ã©tait faite de zigzag incessant, certainement pour empÃªcher le souffle dâ€™une bombe atomique pensa David. Florence avait fini de prÃ©parer le matÃ©riel demandÃ© par PrÃ©lude. Elle Ã©tait fin prÃªte. Elle vÃ©rifia le bon fonctionnement de la liaison entre son ordinateur portable et Internet. PrÃ©lude Ã©tait bien lÃ . A peine connectÃ© Ã  Internet que la voix de PrÃ©lude se fit entendre. Florence est une jeune femme, grande et filiforme. Ses longs cheveux blonds ressemblent aux vagues que forment les blÃ©s dans les champs sous lâ€™effet du vent. Et lâ€™on pourrait croire que ses yeux sont des Ã©meraudes trouvÃ©s sous les deux petites collines qui masquent une mine dâ€™or : son cÅ“ur.<p/>', 0, '2018-06-08 18:22:49'),
-(3, 'Un billet simple pour l\'Alaska', 'Chapitre 3', 'La sagesse ', '<p>David se rappelait de ce programme mÃ©langeant deux anciennes technologies. Il sâ€™en souvenait trÃ¨s bien, cinq annÃ©es de travail acharnÃ© pour rÃ©aliser un vieux rÃªve dâ€™enfant un peu solitaire. Il voulait un ami et il avait trouvÃ© en lâ€™informatique la possibilitÃ© dâ€™avoir cet ami. Un ami capable de rÃ©flÃ©chir vite, exempt de sentiment. Câ€™est une informaticienne chevronnÃ©e de 35 ans. Une surdouÃ©e qui sâ€™est dÃ©couvert une passion pour lâ€™informatique Ã  lâ€™Ã¢ge de treize ans lorsquâ€™elle a vu une publicitÃ© pour cet ordinateur familial dont on ventait les mÃ©rites Ã  lâ€™aide dâ€™une petite marionnette virtuelle. Elle voulait un ami, elle a eu une marionnette virtuelle. Depuis, la marionnette a laissÃ© place Ã  des projets plus sÃ©rieux, plus lucratifs surtout. Mais Sophie, câ€™est comme Ã§a quâ€™elle nommait sa marionnette, est toujours lÃ , dans un petit coin de son ordinateur et câ€™est Ã  Sophie quâ€™elle sâ€™adresse quand le moral est au plus bas.  Mais aujourdâ€™hui, câ€™est Sophie qui sâ€™adresse Ã  Florence.<p/>', 0, '2018-07-08 18:23:55'),
+(3, 'Un billet simple pour l\'Alaska', 'Chapitre 3', 'La sagesse ', '<p>David se rappelait de ce programme m&eacute;langeant deux anciennes technologies. Il s&rsquo;en souvenait tr&egrave;s bien, cinq ann&eacute;es de travail acharn&eacute; pour r&eacute;aliser un vieux r&ecirc;ve d&rsquo;enfant un peu solitaire. Il voulait un ami et il avait trouv&eacute; en l&rsquo;informatique la possibilit&eacute; d&rsquo;avoir cet ami. Un ami capable de r&eacute;fl&eacute;chir vite, exempt de sentiment. C&rsquo;est une informaticienne chevronn&eacute;e de 35 ans. Une surdou&eacute;e qui s&rsquo;est d&eacute;couvert une passion pour l&rsquo;informatique &agrave; l&rsquo;&acirc;ge de treize ans lorsqu&rsquo;elle a vu une publicit&eacute; pour cet ordinateur familial dont on ventait les m&eacute;rites &agrave; l&rsquo;aide d&rsquo;une petite marionnette virtuelle. Elle voulait un ami, elle a eu une marionnette virtuelle. Depuis, la marionnette a laiss&eacute; place &agrave; des projets plus s&eacute;rieux, plus lucratifs surtout. Mais Sophie, c&rsquo;est comme &ccedil;a qu&rsquo;elle nommait sa marionnette, est toujours l&agrave;, dans un petit coin de son ordinateur et c&rsquo;est &agrave; Sophie qu&rsquo;elle s&rsquo;adresse quand le moral est au plus bas. Mais aujourd&rsquo;hui, c&rsquo;est Sophie qui s&rsquo;adresse &agrave; Florence.</p>\r\n<p>&nbsp;</p>', 0, '2018-07-08 18:23:55'),
 (4, 'Un billet simple pour l\'Alaska', 'Chapitre 4', 'L\'ouragan', '<p>La journÃ©e commence. Il sâ€™habille comme il peut tout en prenant son cafÃ©. Chemise blanche repassÃ©e la veille par lui-mÃªme. Une cravate comme tous les jours. Et son costume noir de chez Sam Montiel, trÃ¨s chic et trÃ¨s branchÃ©. Chaussures cuir noir. Comme il aime faire remarquer : \"Vous Ãªtes soit dans vos chaussures, soit dans votre lit. Alors il faut de bonnes chaussures et une bonne literie !\". La mÃ©tÃ©o a annoncÃ© un ciel bleu et des tempÃ©ratures au-dessus de la normale saisonniÃ¨re. Câ€™est un trÃ¨s beau mois de mai qui sâ€™annonce. David finit au bout d\'une heure par s\'assoupir. Il fut rÃ©veillÃ© par le bruit dâ€™une portiÃ¨re se fermant. Le chauffeur venait de sortir et discutait avec un militaire. David reconnu lâ€™entrÃ©e du 57e RA qui nâ€™avait pas changÃ© depuis son dÃ©part. Â« Nous sommes arrivÃ©s Monsieur Arnould. Â» Dis l\'un des gardes du corps de David.<p/>', 0, '2018-08-08 18:24:46'),
 (5, 'Un billet simple pour l\'Alaska', 'Chapitre 5', 'Le souffle ', '<p>Une voiture venait dâ€™arriver de lâ€™autre cÃ´tÃ© de la barriÃ¨re. Une personne sortit. Un militaire. Il Ã©tait comme dans les films de guerre pensa David. Les dÃ©corations remplissaient lâ€™avant de sa veste. Il sâ€™approcha de la voiture oÃ¹ se trouvait David. Le chauffeur ouvrit la fenÃªtre. Â« PrÃ©lude mâ€™avait dit quâ€™il dÃ©sirait connaÃ®tre lâ€™amour. Les ordinateurs nâ€™ont pas de sentiments et lâ€™amour nâ€™est que sentiments. Il y a bien lâ€™amour physique, mais sans les sentiments, cela ressemble davantage Ã  un instinct de reproduction quâ€™Ã  de lâ€™amour. Un ordinateur nâ€™a pas ce besoin de reproduction. Et pourquoi mâ€™avoir choisi ? Â» Mais ils Ã©taient beaucoup plus rapides et plus grands. Le peu de voitures qui circulaient encore Ã©taient ultra sÃ©curisÃ©es. C\'est pourquoi la vitesse maximum autorisÃ©e avait Ã©tÃ© portÃ©e Ã  230km/h. Les gens pouvaient commencer Ã  travailler Ã  lâ€™aide de leur ordinateur portables reliÃ© au rÃ©seau par leur tÃ©lÃ©phone mobile. Ils auraient pu travailler de chez eux, mais le contact humain restait une prioritÃ©. Voir les collÃ¨gues, prendre un cafÃ© ensemble Ã  midi et ce dire â€˜Ã€ demainâ€™. Telle Ã©tait la vie de lâ€™homme \"moderne\".<p/>', 0, '2018-09-08 18:25:29'),
-(6, 'Un billet simple pour l\'Alaska', 'Chapitre 6', 'La rÃ©solution', '<p>Internet nâ€™est pas le seul rÃ©seau. Il existe un autre rÃ©seau plus performant. Je ne tâ€™apprendrais rien en te disant quâ€™Internet a Ã©tÃ© crÃ©e par lâ€™armÃ©e AmÃ©ricaine dans un but militaire. Internet nâ€™Ã©tait que le prototype. Un autre rÃ©seau a Ã©tÃ© crÃ©Ã© pour les militaires. ComplÃ¨tement indÃ©pendant dâ€™Internet. Tirant des leÃ§ons du premier rÃ©seau, le petit frÃ¨re dâ€™Internet est devenue un grand frÃ¨re.\r\n\r\nIl a recommencÃ© et recommencÃ©. Pratiquement tous les ordinateurs existants furent sous son contrÃ´le. Il ne laissait pas de trace, ne se montrait pas. Et puis, il a dÃ©couvert les dialogues en direct via Internet, le tÃ©lÃ©phone, la visio-confÃ©rence, la domotique...\r\n\r\nDavid comprenait trÃ¨s bien oÃ¹ voulait en venir PrÃ©lude. Lorsquâ€™il lâ€™avait crÃ©Ã©, il dÃ©testait ce monde. Sâ€™il avait eu la possibilitÃ© de le changer, il lâ€™aurait certainement fait. Il lâ€™aurait fait en pensÃ©, mais pas en geste. David nâ€™Ã©tait pas du genre mÃ©chant. Jamais il nâ€™aurait fait de mal Ã  qui que ce soit, mais il avait certainement mis cette idÃ©e dans la programmation de PrÃ©lude sans le vouloir.<p/>', 0, '2018-10-08 18:26:24');
+(6, 'Un billet simple pour l\'Alaska', 'Chapitre 6', 'La rÃ©solution', '<p>Internet n&rsquo;est pas le seul r&eacute;seau. Il existe un autre r&eacute;seau plus performant. Je ne t&rsquo;apprendrais rien en te disant qu&rsquo;Internet a &eacute;t&eacute; cr&eacute;e par l&rsquo;arm&eacute;e Am&eacute;ricaine dans un but militaire. Internet n&rsquo;&eacute;tait que le prototype. Un autre r&eacute;seau a &eacute;t&eacute; cr&eacute;&eacute; pour les militaires. Compl&egrave;tement ind&eacute;pendant d&rsquo;Internet. Tirant des le&ccedil;ons du premier r&eacute;seau, le petit fr&egrave;re d&rsquo;Internet est devenue un grand fr&egrave;re. Il a recommenc&eacute; et recommenc&eacute;. Pratiquement tous les ordinateurs existants furent sous son contr&ocirc;le. Il ne laissait pas de trace, ne se montrait pas. Et puis, il a d&eacute;couvert les dialogues en direct via Internet, le t&eacute;l&eacute;phone, la visio-conf&eacute;rence, la domotique... David comprenait tr&egrave;s bien o&ugrave; voulait en venir Pr&eacute;lude. Lorsqu&rsquo;il l&rsquo;avait cr&eacute;&eacute;, il d&eacute;testait ce monde. S&rsquo;il avait eu la possibilit&eacute; de le changer, il l&rsquo;aurait certainement fait. Il l&rsquo;aurait fait en pens&eacute;, mais pas en geste. David n&rsquo;&eacute;tait pas du genre m&eacute;chant. Jamais il n&rsquo;aurait fait de mal &agrave; qui que ce soit, mais il avait certainement mis cette id&eacute;e dans la programmation de Pr&eacute;lude sans le vouloir.</p>\r\n<p>&nbsp;</p>', 0, '2018-10-08 18:26:24');
 
 -- --------------------------------------------------------
 
@@ -90,51 +90,30 @@ CREATE TABLE IF NOT EXISTS `commentchapter` (
   `stateComment` int(1) NOT NULL,
   `publicationDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `commentchapter`
 --
 
 INSERT INTO `commentchapter` (`id`, `idChapter`, `contentComment`, `pseudo`, `stateComment`, `publicationDate`) VALUES
-(1, 1, 'Un chapitre trÃ¨s bien et qui donne envie de lire la suite.', 'Benben', 3, '2018-10-07 13:00:00'),
-(2, 1, 'trÃ¨s bien', 'beran', 3, '2018-10-07 19:16:22'),
-(3, 1, 'dsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qidsgmnkhqgfojn pgf nopqfn opqgjnoqpfn *qjnqg ponqpfgjnpoqgjnqgjn$ qn qniqfjnqgjn oqpgjnpqgj noqbpqhdb qggbhqpuihnquihn qi', 'Maxime', 3, '2018-10-07 19:20:31'),
-(4, 1, 'header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );header(\"Location: ViewChapitre.php?chapitre=chapitre&numero_chapitre=chapitre \'. $_GET[\'id_chapitre\'] .\'\" );', 'marie', 2, '2018-10-07 19:24:16'),
-(5, 5, 'salut', 'mariiiiiie', 2, '2018-10-07 19:25:37'),
-(6, 5, 'cx,wg,', 'Maxime', 0, '2018-10-07 19:26:32'),
-(8, 1, 'wnsfgsf,', 'Maxime', 3, '2018-10-09 18:48:02'),
-(9, 6, 'afaaf ze z zg zgzgzg', 'marie', 2, '2018-10-10 23:14:56'),
-(10, 6, 'afaaf ze z zg zgzgzg', 'marie', 0, '2018-10-10 23:15:58'),
-(11, 6, 'fsg, ', 'a', 0, '2018-10-10 23:16:19'),
-(12, 6, 'fsg, ', 'a', 0, '2018-10-10 23:17:44'),
-(13, 4, 'sdvsdv', 'q', 3, '2018-10-10 23:17:58'),
-(14, 1, 'coucouu', 'salut', 2, '2018-10-17 00:16:36'),
-(15, 6, 'pp', 'p', 0, '2018-11-02 18:03:00'),
-(16, 6, 'sa', 'as', 0, '2018-11-02 18:04:04'),
-(17, 6, 'swsss', 'as', 0, '2018-11-02 18:04:40'),
-(18, 6, 'aa', 'aa', 0, '2018-11-02 18:05:05'),
-(19, 6, 'tr', 'tr', 0, '2018-11-02 18:17:08'),
-(20, 6, 'sa', 'ass', 1, '2018-11-02 18:18:54'),
-(21, 6, 'cd', 'dc', 0, '2018-11-02 18:20:53'),
-(22, 5, 'as', 'sa', 0, '2018-11-02 18:26:53'),
-(23, 5, 'sz', 'sz', 0, '2018-11-02 18:28:25'),
-(24, 5, 'sss', 'zs', 0, '2018-11-02 18:30:59'),
-(25, 6, 'pp', 'p', 0, '2018-11-02 18:31:55'),
-(26, 6, 'gt', 'tg', 2, '2018-11-02 18:33:26'),
-(27, 6, 'lo', 'lo', 3, '2018-11-02 18:34:44'),
-(28, 6, 'qa', 'aq', 3, '2018-11-02 19:14:29'),
-(29, 6, 'salut ', 'maxou', 3, '2018-11-02 22:16:12'),
-(30, 1, 'u', 'u', 1, '2018-11-06 19:50:28'),
-(31, 1, 'zz', 'z', 2, '2018-11-06 19:52:04'),
-(32, 1, 'io', 'i', 2, '2018-11-06 19:52:49'),
-(33, 1, 'sfn', 'sgh', 1, '2018-11-06 20:21:02'),
-(34, 1, 'glgl', 'guul', 3, '2018-11-06 20:21:36'),
-(35, 6, 'vivement la suite', 'bb', 0, '2018-11-06 22:46:14'),
-(36, 2, 'xam', 'max', 2, '2018-11-07 17:38:04'),
-(47, 1, 'sfgn', 'fgj', 1, '2018-11-15 18:16:13'),
-(43, 1, 'dazdazd', 'da', 1, '2018-11-13 21:48:57'),
-(48, 1, 'dgh', 'maxime', 1, '2018-11-15 18:18:09');
+(1, 1, 'Bonjour, je trouve ...', 'Bernard', 0, '2018-12-06 18:57:31'),
+(2, 1, 'Trop cool le chapitre. Vivement la suite ...', 'HervÃ©', 0, '2018-12-06 18:58:06'),
+(3, 1, 'J\'aimerai connaÃ®tre ...', 'Fred', 0, '2018-12-06 18:59:29'),
+(4, 1, 'Je trouve que le chapitre n\'est pas ce que jâ€™attendais...', 'Berangere', 0, '2018-12-06 19:00:47'),
+(5, 1, 'Vivement la suite ...', 'Noah', 0, '2018-12-06 19:02:34'),
+(6, 1, 'Je trouve que le roman commence trÃ¨s bien, continuez comme ca', 'Kevin', 0, '2018-12-06 19:05:17'),
+(7, 1, 'C\'est vraiment un roman de merde', 'Lionel', 1, '2018-12-06 19:05:46'),
+(8, 1, 'Je suis satisfait de cette lecture, bon travail pour ce chpitre', 'Paul', 0, '2018-12-06 19:06:29'),
+(9, 1, 'Je ...', 'Romuald', 0, '2018-12-06 19:07:19'),
+(10, 1, 'j\'aime cette histoire de Dr ...', 'cloÃ©', 0, '2018-12-06 19:07:52'),
+(11, 1, 'J\'ai hÃ¢te de voir la suite ...', 'gladis', 0, '2018-12-06 19:08:33'),
+(12, 1, 'J\'aime', 'Christiane', 0, '2018-12-06 19:09:05'),
+(13, 1, 'Reste plus cas lire la suite', 'BÃ©atrice', 0, '2018-12-06 19:09:29'),
+(14, 1, 'Un mot, parfait ...', 'GÃ©raldine', 0, '2018-12-06 19:09:51'),
+(15, 1, 'j\'adore', 'Gaelle', 0, '2018-12-06 19:10:08'),
+(16, 1, 'coooooooool', 'Marina', 0, '2018-12-06 19:10:22'),
+(17, 1, 'A lire et a relire', 'bernadette', 0, '2018-12-06 19:10:46');
 
 -- --------------------------------------------------------
 
@@ -151,29 +130,14 @@ CREATE TABLE IF NOT EXISTS `message` (
   `stateMessage` int(1) NOT NULL,
   `publicationDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `message`
 --
 
 INSERT INTO `message` (`id`, `name`, `email`, `contentMessage`, `stateMessage`, `publicationDate`) VALUES
-(1, 'marty', 'max bonbon @', 'salut', 1, '2018-10-07 09:19:19'),
-(2, 'as', 'sasasa', 'asasaasa', 0, '2018-10-07 09:25:10'),
-(3, 'qsdvdbSS', 'QFBBFFNFNFB', 'sfgnfgnfg,sf,sf,sf,sf,', 0, '2018-10-07 11:29:31'),
-(4, 'd', 'd', 'd', 1, '2018-10-07 11:30:47'),
-(5, 'a', 'a', 'a', 0, '2018-10-07 11:39:10'),
-(6, 'a', 'a', 'a', 0, '2018-10-07 11:39:57'),
-(7, 'a', 'maxbonbon@hotmail.fr', 'dtklkskk', 2, '2018-10-09 18:53:24'),
-(8, 'a', 'x@x.x', 'xfyj', 0, '2018-10-10 23:18:32'),
-(9, 'marty', 'maxbonbon@hotmail.com', 'salut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq jsalut les kqjdpfj jpjbo qbhoqjbpq j', 2, '2018-10-15 01:37:05'),
-(10, 'maximeeeeeeeeee', 'x@x.x', 'salut les petits', 0, '2018-10-17 00:19:37'),
-(11, 'as', 'x@x.x', 'as', 2, '2018-11-02 19:55:11'),
-(12, 'as', 'x@x.x', 'as', 1, '2018-11-02 19:57:14'),
-(13, 'as', 'x@x.x', 'sdqdfbqdfnqdfnb', 1, '2018-11-02 19:58:03'),
-(14, 'asea', 'asez', 'azerty', 1, '2018-11-06 21:38:10'),
-(15, 'bb', 'berangetnico@hotmail.com', 'Bon travail donne envie de lire la suite !', 2, '2018-11-06 22:50:39'),
-(16, 'berangere', 'berangetnico@gmail.com', 'en attente de la reponse', 2, '2018-11-13 23:02:40');
+(1, 'Maxime', 'maxbonbon@hotmail.fr', 'Bonjour, je souhaiterais connaÃ®tre...', 2, '2018-12-06 19:12:55');
 
 -- --------------------------------------------------------
 
@@ -189,19 +153,14 @@ CREATE TABLE IF NOT EXISTS `replymessage` (
   `contentReplyMessage` text NOT NULL,
   `replyDate` datetime NOT NULL,
   PRIMARY KEY (`idReplyMessge`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `replymessage`
 --
 
 INSERT INTO `replymessage` (`idReplyMessge`, `idMessage`, `subject`, `contentReplyMessage`, `replyDate`) VALUES
-(1, 9, 'salut', 'sa', '2018-11-13 23:18:52'),
-(2, 9, 'salut', 'sqdbqdngsfhjnsfgh hqdfhqdfhdq f qhdf hq', '2018-11-13 23:21:02'),
-(3, 7, 'salut', 'xnv', '2018-11-13 23:21:50'),
-(4, 16, 'salut', 'cghkdghkgh', '2018-11-13 23:24:24'),
-(5, 7, 'salut', 'sffhj', '2018-11-13 23:32:52'),
-(6, 7, 'salut', 'fb', '2018-11-13 23:33:43');
+(1, 1, 'Prochain chapitre', 'Bonjour,\r\n\r\nJe tiens Ã  vous remercier pour lâ€™intÃ©rÃªt que vous m\'accordez et en rÃ©ponse Ã  votre message, je vous dis ...', '2018-12-06 19:14:49');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
